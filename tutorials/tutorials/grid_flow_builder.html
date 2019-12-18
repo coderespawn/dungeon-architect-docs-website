@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Grid Flow Builder &mdash; Dungeon Architect  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Snap Flow Builder" href="snap_flow_builder.html" />
+    <link rel="prev" title="Launch Pad Window" href="launch_pad.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Dungeon Architect
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="create_first_dungeon.html">Create your first Dungeon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design_first_theme.html">Design your first theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch_pad.html">Launch Pad Window</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Grid Flow Builder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-grid-flow-dungeon">Create a Grid Flow Dungeon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup-dungeon-prefab">Setup Dungeon Prefab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-parent-object">Setup Parent Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-theme">Setup Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-gridflow-graph">Setup GridFlow Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-dungeon">Build Dungeon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#open-grid-flow-editor">Open Grid Flow Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#link-editor-with-dungeon">Link Editor with Dungeon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explore-grid-flow-graph">Explore Grid Flow Graph</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#design-a-gridflow-graph">Design a GridFlow Graph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="snap_flow_builder.html">Snap Flow Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mario_builder.html">Mario Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple_city_builder.html">Simple City Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_builders.html">Other Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_theming.html">Advanced Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_dungeon_concpets.html">Advanced Dungeons</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Dungeon Architect</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Grid Flow Builder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="grid-flow-builder">
+<h1>Grid Flow Builder<a class="headerlink" href="#grid-flow-builder" title="Permalink to this headline">¶</a></h1>
+<p>The Grid Flow Builder offers a rich set of tools to control the flow of your dungeons and item placement</p>
+<div class="section" id="create-a-grid-flow-dungeon">
+<h2>Create a Grid Flow Dungeon<a class="headerlink" href="#create-a-grid-flow-dungeon" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setup-dungeon-prefab">
+<h3>Setup Dungeon Prefab<a class="headerlink" href="#setup-dungeon-prefab" title="Permalink to this headline">¶</a></h3>
+<p>Create a new scene.  Navigate to <code class="docutils literal notranslate"><span class="pre">Assets/DungeonArchitect/Prefabs</span></code> and drop in the DungeonGridFlow prefab on to the scene</p>
+<div class="figure align-center">
+<img alt="../_images/01.png" src="../_images/01.png" />
+</div>
+<p>Select the DungeonGridFlow game object you just dropped and reset the transform</p>
+<div class="figure align-center">
+<img alt="../_images/02.png" src="../_images/02.png" />
+</div>
+</div>
+<div class="section" id="setup-parent-object">
+<h3>Setup Parent Object<a class="headerlink" href="#setup-parent-object" title="Permalink to this headline">¶</a></h3>
+<p>Create a new Parent object where all the spawned dungeon items will go in.</p>
+<div class="figure align-center">
+<img alt="../_images/032.png" src="../_images/032.png" />
+</div>
+<p>Reset the parent object’s transform and set it to static</p>
+<div class="figure align-center">
+<img alt="../_images/04.png" src="../_images/04.png" />
+</div>
+<p>Assign the parent object</p>
+<div class="figure align-center">
+<img alt="../_images/051.png" src="../_images/051.png" />
+</div>
+<p>This makes sure all the spawned dungeon objects are placed under this parent object</p>
+</div>
+<div class="section" id="setup-theme">
+<h3>Setup Theme<a class="headerlink" href="#setup-theme" title="Permalink to this headline">¶</a></h3>
+<p>There’s a theme available in the samples folder which we’ll use for this tutorial section</p>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">Assets\DungeonArchitect_Samples\DemoBuilder_GridFlow\Theme</span></code> and assign the theme <code class="docutils literal notranslate"><span class="pre">ThemePrehistoric</span></code> to the DungeonGridFlow game object</p>
+<div class="figure align-center">
+<img alt="../_images/06.png" src="../_images/06.png" />
+</div>
+</div>
+<div class="section" id="setup-gridflow-graph">
+<h3>Setup GridFlow Graph<a class="headerlink" href="#setup-gridflow-graph" title="Permalink to this headline">¶</a></h3>
+<p>This builder requires another asset called the <cite>Grid Flow Graph</cite>.   This is a graph that helps you  control the flow of your dungeon. In this section, we’ll use an existing graph from the samples folder</p>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">Assets\DungeonArchitect_Samples\DemoBuilder_GridFlow\FlowGraph</span></code> and assign the graph <code class="docutils literal notranslate"><span class="pre">DemoGridFlow</span></code> to the <cite>DungeonGridFlow</cite> game object’s <code class="docutils literal notranslate"><span class="pre">Flow</span> <span class="pre">Asset</span></code> property</p>
+<div class="figure align-center">
+<img alt="../_images/07.png" src="../_images/07.png" />
+</div>
+</div>
+<div class="section" id="build-dungeon">
+<h3>Build Dungeon<a class="headerlink" href="#build-dungeon" title="Permalink to this headline">¶</a></h3>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">DungeonGridFlow</span></code> game object and click <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">Dungeon</span></code> button from the inspector window</p>
+<div class="figure align-center" id="id1">
+<img alt="../_images/082.jpg" src="../_images/082.jpg" />
+<p class="caption"><span class="caption-text">GridFlow dungeon built using the Prehistoric theme</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id2">
+<img alt="../_images/092.jpg" src="../_images/092.jpg" />
+<p class="caption"><span class="caption-text">GridFlow dungeons support key-locks</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="open-grid-flow-editor">
+<h3>Open Grid Flow Editor<a class="headerlink" href="#open-grid-flow-editor" title="Permalink to this headline">¶</a></h3>
+<p>Let’s open the GridFlow asset in the editor:</p>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">Assets\DungeonArchitect_Samples\DemoBuilder_GridFlow\FlowGraph</span></code> and double click on <code class="docutils literal notranslate"><span class="pre">DemoGridFlow</span></code>.</p>
+<p>Dock the editor window so you see both the scene view and the grid flow editor</p>
+<div class="figure align-center">
+<img alt="../_images/102.jpg" src="../_images/102.jpg" />
+</div>
+<p>Click the Play button on the top left of the flow editor to build a new dungeon in the Grid Flow Editor</p>
+<div class="figure align-center">
+<img alt="../_images/11.png" src="../_images/11.png" />
+</div>
+<div class="figure align-center">
+<img alt="../_images/flow_editor_anim.gif" src="../_images/flow_editor_anim.gif" />
+</div>
+</div>
+<div class="section" id="link-editor-with-dungeon">
+<h3>Link Editor with Dungeon<a class="headerlink" href="#link-editor-with-dungeon" title="Permalink to this headline">¶</a></h3>
+<p>We are going to link up the dungeon we have on the scene (<cite>DungeonGridFlow</cite> game object) with the Grid Flow Editor so when we generate a new dungeon in the editor, it syncs up the dungeon on the scene</p>
+<p>Click an empty space (grey area) in the Execution Graph</p>
+<div class="figure align-center" id="id3">
+<img alt="../_images/12.png" src="../_images/12.png" />
+<p class="caption"><span class="caption-text">Click anywhere in the empty area</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>This will show up the execution graph properties in the Inspector window</p>
+<div class="figure align-center" id="id4">
+<img alt="../_images/13.png" src="../_images/13.png" />
+<p class="caption"><span class="caption-text">Execution Graph properties</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Assign the dungeon game object by dragging the DungeonGridFlow over</p>
+<div class="figure align-center">
+<img alt="../_images/142.jpg" src="../_images/142.jpg" />
+</div>
+<p>Now build the dungeon again by clicking the Play button in the Execution Graph Window</p>
+<div class="figure align-center">
+<img alt="../_images/11.png" src="../_images/11.png" />
+</div>
+<p>This will recreate the dungeon in the scene view.  The dungeon in the editor window is now synchronized with the dungeon in the scene view</p>
+<p>If you double click on any of the tiles in the Tilemap window,  the scene view should focus on that tile/item</p>
+<p>Double click on the Bonus Item (<code class="docutils literal notranslate"><span class="pre">B</span></code>) in the tilemap.</p>
+<div class="figure align-center">
+<img alt="../_images/15.png" src="../_images/15.png" />
+</div>
+<p>The scene view should zoom in on the treasure chest</p>
+<div class="figure align-center">
+<img alt="../_images/161.jpg" src="../_images/161.jpg" />
+</div>
+</div>
+<div class="section" id="explore-grid-flow-graph">
+<h3>Explore Grid Flow Graph<a class="headerlink" href="#explore-grid-flow-graph" title="Permalink to this headline">¶</a></h3>
+<p>After you’ve built a dungeon in the editor (by hitting the play button on the top left), you can select each node and see how the dungeon layout was built, as shown in the lower preview panels</p>
+<div class="figure align-center" id="id5">
+<img alt="../_images/flow_editor_node_preview.gif" src="../_images/flow_editor_node_preview.gif" />
+<p class="caption"><span class="caption-text">Select a node to preview the build process</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="design-a-gridflow-graph">
+<h2>Design a GridFlow Graph<a class="headerlink" href="#design-a-gridflow-graph" title="Permalink to this headline">¶</a></h2>
+<p>In the previous section, we used an existing Grid Flow graph. In this section, we’ll design one ourselves.</p>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>Destroy the existing dungeon and clear out the Flow Asset that we assigned earlier</p>
+<div class="figure align-center" id="id6">
+<img alt="../_images/171.png" src="../_images/171.png" />
+<p class="caption"><span class="caption-text">DungeonGridFlow game object properties</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Create a new Grid Flow asset from either the Create menu or the Main Menu</p>
+<div class="figure align-center" id="id7">
+<img alt="../_images/181.png" src="../_images/181.png" />
+<p class="caption"><span class="caption-text">Create Menu</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id8">
+<img alt="../_images/19.png" src="../_images/19.png" />
+<p class="caption"><span class="caption-text">Main Menu</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>Rename to something appropriate and double click the grid flow asset to open it in the editor</p>
+<p>We won’t be needing the scene view for some time.  Dock the editor so we have more working area</p>
+<div class="figure align-center">
+<img alt="../_images/20.png" src="../_images/20.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="snap_flow_builder.html" class="btn btn-neutral float-right" title="Snap Flow Builder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="launch_pad.html" class="btn btn-neutral float-left" title="Launch Pad Window" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Code Respawn
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

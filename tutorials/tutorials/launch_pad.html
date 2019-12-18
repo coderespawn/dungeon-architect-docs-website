@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Launch Pad Window &mdash; Dungeon Architect  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Grid Flow Builder" href="grid_flow_builder.html" />
+    <link rel="prev" title="Design your first theme" href="design_first_theme.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Dungeon Architect
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="create_first_dungeon.html">Create your first Dungeon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design_first_theme.html">Design your first theme</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Launch Pad Window</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#open-launch-pad">Open Launch Pad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#navigation">Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#builder-templates">Builder Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#samples">Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flow-graph-templates">Flow Graph Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#theme-templates">Theme Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#news">News</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="grid_flow_builder.html">Grid Flow Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snap_flow_builder.html">Snap Flow Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mario_builder.html">Mario Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple_city_builder.html">Simple City Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_builders.html">Other Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_theming.html">Advanced Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_dungeon_concpets.html">Advanced Dungeons</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Dungeon Architect</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Launch Pad Window</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="launch-pad-window">
+<h1>Launch Pad Window<a class="headerlink" href="#launch-pad-window" title="Permalink to this headline">¶</a></h1>
+<p>Use the Launch Pad window to setup new dungeon scenes, browse the samples, clone from templates and much more</p>
+<div class="section" id="open-launch-pad">
+<h2>Open Launch Pad<a class="headerlink" href="#open-launch-pad" title="Permalink to this headline">¶</a></h2>
+<p>From the Main menu, open the Launch Pad window <code class="docutils literal notranslate"><span class="pre">Dungeon</span> <span class="pre">Architect</span> <span class="pre">&gt;</span> <span class="pre">Launch</span> <span class="pre">Pad</span></code></p>
+<div class="figure align-center">
+<img alt="../_images/031.png" src="../_images/031.png" />
+</div>
+</div>
+<div class="section" id="navigation">
+<h2>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">¶</a></h2>
+<p>Select the various sections from the left.</p>
+<div class="figure align-center">
+<img alt="../_images/041.jpg" src="../_images/041.jpg" />
+</div>
+<p>Use the navigation bar on the top to go back to a previous page. This is useful for retaining the scroll positions of the previous page (especially for larger pages like the Samples section)</p>
+<div class="figure align-center" id="id1">
+<img alt="../_images/05.jpg" src="../_images/05.jpg" />
+<p class="caption"><span class="caption-text">Navigation bar</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="builder-templates">
+<h2>Builder Templates<a class="headerlink" href="#builder-templates" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id2">
+<img alt="../_images/02.jpg" src="../_images/02.jpg" />
+<p class="caption"><span class="caption-text">Dungeon Architect - List of Builders</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Dungeon Architect supports many different types of dungeon layout methods and is designed in a way that new layout methods can be easily added in the future</p>
+<p>These layout methods are called <cite>Dungeon Builders</cite> or <strong>Builders</strong> in short</p>
+<p>This section lets you create a new scene preconfigured with one of the builder templates.  Click on any of the builders. In the next screen, click the <code class="docutils literal notranslate"><span class="pre">Clone</span> <span class="pre">Scene</span></code> button</p>
+<div class="figure align-center">
+<img alt="../_images/061.jpg" src="../_images/061.jpg" />
+</div>
+<p>This will create a new scene based on the template, fully configured with the appropriate dungeon.  It will also clone a starting theme file (and any other flow graph assets) and set everything up.</p>
+<p>Choose a folder to saved your scene file.  Once saved, the launcher would do the following:</p>
+<ul class="simple">
+<li><p>Open the new scene</p></li>
+<li><p>Open any theme editor windows associated with the referenced assets (Theme Editor, Flow Graph Editors etc)</p></li>
+<li><p>Select the dungeon game object (so you see the properties in the inspector by default)</p></li>
+</ul>
+</div>
+<div class="section" id="samples">
+<h2>Samples<a class="headerlink" href="#samples" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="../_images/071.jpg" src="../_images/071.jpg" />
+</div>
+<p>There are tons of samples to explore.  Select a sample you like and perform one of the following actions</p>
+<ul class="simple">
+<li><p><strong>Open Scene</strong>: Opens the sample scene (usually under DungeonArchitect_Samples folder)</p></li>
+<li><p><strong>Open Folder</strong>: Opens the folder containing the scene</p></li>
+<li><p><strong>Clone Scene</strong>: Clone a scene and also clone over the referenced assets (themes, flow graphs etc) so you can modify them without affecting the sample scene</p></li>
+<li><p><strong>Watch Demo</strong>: Watch a video, if it exists</p></li>
+</ul>
+<div class="figure align-center">
+<img alt="../_images/081.jpg" src="../_images/081.jpg" />
+</div>
+</div>
+<div class="section" id="flow-graph-templates">
+<h2>Flow Graph Templates<a class="headerlink" href="#flow-graph-templates" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="../_images/091.jpg" src="../_images/091.jpg" />
+</div>
+<p>Flow graphs allow you to control the flow of your dungeon (more on this in the later tutorial sections).   This section contains a list of flow graph templates you can use as a starting point for your project</p>
+<div class="figure align-center" id="id3">
+<img alt="../_images/101.jpg" src="../_images/101.jpg" />
+<p class="caption"><span class="caption-text">Clone Grid Flow Graphs</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id4">
+<img alt="../_images/111.jpg" src="../_images/111.jpg" />
+<p class="caption"><span class="caption-text">Clone Snap Flow Graphs</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="theme-templates">
+<h2>Theme Templates<a class="headerlink" href="#theme-templates" title="Permalink to this headline">¶</a></h2>
+<p>Clone one of the many themes and use it in your project or as a starting point for a new theme</p>
+<div class="figure align-center" id="id5">
+<img alt="../_images/121.jpg" src="../_images/121.jpg" />
+<p class="caption"><span class="caption-text">Theme template browser</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Select a theme and clone it</p>
+<div class="figure align-center">
+<img alt="../_images/131.jpg" src="../_images/131.jpg" />
+</div>
+<p>There’s also a category on <cite>External Themes</cite>, the ones that use external paid art assets from the Asset Store.  You can use these themes if you also own the art asset.</p>
+<div class="figure align-center">
+<img alt="../_images/141.jpg" src="../_images/141.jpg" />
+</div>
+<div class="figure align-center">
+<img alt="../_images/151.jpg" src="../_images/151.jpg" />
+</div>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>Links to various online documentation, including this one</p>
+<div class="figure align-center">
+<img alt="../_images/16.png" src="../_images/16.png" />
+</div>
+</div>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<p>Reach the developers through any one of these channels. Interact with the community and the devs in Discord chat and forums or reach directly through email</p>
+<div class="figure align-center">
+<img alt="../_images/17.png" src="../_images/17.png" />
+</div>
+</div>
+<div class="section" id="news">
+<h2>News<a class="headerlink" href="#news" title="Permalink to this headline">¶</a></h2>
+<p>Dungeon Architect News!  Find out whats new since the last update</p>
+<div class="figure align-center">
+<img alt="../_images/18.jpg" src="../_images/18.jpg" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="grid_flow_builder.html" class="btn btn-neutral float-right" title="Grid Flow Builder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="design_first_theme.html" class="btn btn-neutral float-left" title="Design your first theme" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Code Respawn
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
