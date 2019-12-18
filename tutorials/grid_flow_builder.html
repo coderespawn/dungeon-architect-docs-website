@@ -99,6 +99,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#design-a-gridflow-graph">Design a GridFlow Graph</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-grid">Create Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-main-path">Create Main Path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-alternate-path">Create Alternate Path</a></li>
 </ul>
 </li>
 </ul>
@@ -311,6 +314,101 @@
 <p>We won’t be needing the scene view for some time.  Dock the editor so we have more working area</p>
 <div class="figure align-center">
 <img alt="_images/20.png" src="_images/20.png" />
+</div>
+<p>Notice that there is only one node in the Execution graph, the <code class="docutils literal notranslate"><span class="pre">Result</span></code> node.   Our final output should be connected to this node</p>
+</div>
+<div class="section" id="create-grid">
+<h3>Create Grid<a class="headerlink" href="#create-grid" title="Permalink to this headline">¶</a></h3>
+<p>Right click on an empty area in the Execution Graph and from the context menu select <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Grid</span></code></p>
+<div class="figure align-center">
+<img alt="_images/L_CreateGrid.png" src="_images/L_CreateGrid.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/21.png" src="_images/21.png" />
+</div>
+<p>Connect this node to the <code class="docutils literal notranslate"><span class="pre">Result</span></code> node and hit play</p>
+<div class="figure align-center">
+<img alt="_images/22.png" src="_images/22.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/11.png" src="_images/11.png" />
+</div>
+<p>This node creates an initial grid to work with</p>
+<div class="figure align-center">
+<img alt="_images/23.png" src="_images/23.png" />
+</div>
+<p>In this builder, you first design your level in an abstract layout graph like this and then move the final result to a tilemap</p>
+</div>
+<div class="section" id="create-main-path">
+<h3>Create Main Path<a class="headerlink" href="#create-main-path" title="Permalink to this headline">¶</a></h3>
+<p>We’ll next create a main path within this grid. The main path has a spawn point and goal</p>
+<p>Create a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Math</span> <span class="pre">Path</span></code></p>
+<div class="figure align-center">
+<img alt="_images/L_CreateMainPath.png" src="_images/L_CreateMainPath.png" />
+</div>
+<p>Unlink the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Grid</span></code> node from the <code class="docutils literal notranslate"><span class="pre">Result</span></code> node (do this by right clicking on the node’s orange border)</p>
+<div class="figure align-center">
+<img alt="_images/241.png" src="_images/241.png" />
+</div>
+<p>Link the nodes up like below and hit Play</p>
+<div class="figure align-center">
+<img alt="_images/25.png" src="_images/25.png" />
+</div>
+<p>This node creates a main path in the grid.  Keep hitting the play button for different result</p>
+<div class="figure align-center">
+<img alt="_images/26.gif" src="_images/26.gif" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you do not see random results when you hit play, make sure randomize is enabled.  Enable this by clicking on an empty area in the Execution Graph to show the properties. In the inspector, select <code class="docutils literal notranslate"><span class="pre">Randomize</span> <span class="pre">Seed</span></code></p>
+</div>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Main</span> <span class="pre">Path</span></code> node and inspect the properties</p>
+<div class="figure align-center">
+<img alt="_images/271.png" src="_images/271.png" />
+</div>
+<p>We’ll leave everything to default for now</p>
+<p>Notice the <cite>Path Name</cite> parameter is set to <code class="docutils literal notranslate"><span class="pre">main</span></code>   This is the name of the path and we will be referencing this path in the future nodes with this name</p>
+<p>You can adjust the size of the path.   <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Marker</span> <span class="pre">Name</span></code> and <code class="docutils literal notranslate"><span class="pre">Goal</span> <span class="pre">Marker</span> <span class="pre">Name</span></code> lets you specify a name for the markers. You can then create these markers in the theme file and add any object you like.    In the <cite>Prehistoric</cite> theme, there’s a marker already created with these names and a player controller is placed under <code class="docutils literal notranslate"><span class="pre">SpawnPoint</span></code> marker and a level goal handler prefab is placed under <code class="docutils literal notranslate"><span class="pre">LevelGoal</span></code> marker</p>
+<div class="figure align-center">
+<img alt="_images/28.jpg" src="_images/28.jpg" />
+</div>
+</div>
+<div class="section" id="create-alternate-path">
+<h3>Create Alternate Path<a class="headerlink" href="#create-alternate-path" title="Permalink to this headline">¶</a></h3>
+<p>We’ll next create an alternate path branching off the main path so the player has another way of reaching the goal</p>
+<p>Create a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Path</span></code></p>
+<div class="figure align-center">
+<img alt="_images/L_CreatePath.png" src="_images/L_CreatePath.png" />
+</div>
+<p>Connect the nodes together like below</p>
+<div class="figure align-center">
+<img alt="_images/291.png" src="_images/291.png" />
+</div>
+<p>Leave all the properties as default and hit play</p>
+<div class="figure align-center">
+<img alt="_images/301.png" src="_images/301.png" />
+</div>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Path</span></code> node and inspect the properties</p>
+<div class="figure align-center">
+<img alt="_images/311.png" src="_images/311.png" />
+</div>
+<p>Change the <cite>Path Name</cite> from <code class="docutils literal notranslate"><span class="pre">branch</span></code> to <code class="docutils literal notranslate"><span class="pre">alt</span></code>.  We will be referencing this branch as <code class="docutils literal notranslate"><span class="pre">alt</span></code> in the future</p>
+<div class="figure align-center">
+<img alt="_images/321.png" src="_images/321.png" />
+</div>
+<p>You can specify the paths from which this path should start and end.    The <cite>Start From Path</cite> parameter is set to <code class="docutils literal notranslate"><span class="pre">main</span></code>, referencing the main branch we created in the previous section</p>
+<p>The <cite>End On Path</cite> is left empty, so the end of this path doesn’t connect back to anything.   We’d like this path to connect back to the main branch.</p>
+<p>Set the <cite>End On Path`</cite> parameter to <code class="docutils literal notranslate"><span class="pre">main</span></code></p>
+<div class="figure align-center">
+<img alt="_images/33.png" src="_images/33.png" />
+</div>
+<p>This will make the alternate path (orange) connect back to the main path (green)</p>
+<div class="figure align-center">
+<img alt="_images/341.png" src="_images/341.png" />
+</div>
+<p>Keep hitting Play for different results</p>
+<div class="figure align-center">
+<img alt="_images/35.gif" src="_images/35.gif" />
 </div>
 </div>
 </div>

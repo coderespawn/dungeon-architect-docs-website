@@ -209,3 +209,145 @@ We won't be needing the scene view for some time.  Dock the editor so we have mo
    :align: center
    
 
+Notice that there is only one node in the Execution graph, the ``Result`` node.   Our final output should be connected to this node
+
+
+Create Grid
+^^^^^^^^^^^
+
+Right click on an empty area in the Execution Graph and from the context menu select ``Layout Graph > Create Grid``
+
+.. figure:: /images/tutorial/04/menu/L_CreateGrid.png
+   :align: center
+
+
+.. figure:: /images/tutorial/04/21.png
+   :align: center
+   
+
+Connect this node to the ``Result`` node and hit play 
+
+
+   
+.. figure:: /images/tutorial/04/22.png
+   :align: center
+
+   
+.. figure:: /images/tutorial/04/11.png
+   :align: center
+   
+
+This node creates an initial grid to work with 
+
+.. figure:: /images/tutorial/04/23.png
+   :align: center
+
+
+In this builder, you first design your level in an abstract layout graph like this and then move the final result to a tilemap
+
+
+Create Main Path
+^^^^^^^^^^^^^^^^
+
+We'll next create a main path within this grid. The main path has a spawn point and goal
+
+Create a new node ``Layout Graph > Create Math Path``
+
+.. figure:: /images/tutorial/04/menu/L_CreateMainPath.png
+   :align: center
+   
+
+
+Unlink the ``Create Grid`` node from the ``Result`` node (do this by right clicking on the node's orange border)
+
+
+.. figure:: /images/tutorial/04/24.png
+   :align: center
+
+
+Link the nodes up like below and hit Play
+
+.. figure:: /images/tutorial/04/25.png
+   :align: center
+
+
+This node creates a main path in the grid.  Keep hitting the play button for different result
+
+.. figure:: /images/tutorial/04/26.gif
+   :align: center
+   
+.. note::
+   If you do not see random results when you hit play, make sure randomize is enabled.  Enable this by clicking on an empty area in the Execution Graph to show the properties. In the inspector, select ``Randomize Seed``
+
+
+Select the ``Create Main Path`` node and inspect the properties
+
+.. figure:: /images/tutorial/04/27.png
+   :align: center
+
+We'll leave everything to default for now
+
+Notice the `Path Name` parameter is set to ``main``   This is the name of the path and we will be referencing this path in the future nodes with this name
+
+You can adjust the size of the path.   ``Start Marker Name`` and ``Goal Marker Name`` lets you specify a name for the markers. You can then create these markers in the theme file and add any object you like.    In the `Prehistoric` theme, there's a marker already created with these names and a player controller is placed under ``SpawnPoint`` marker and a level goal handler prefab is placed under ``LevelGoal`` marker
+
+.. figure:: /images/tutorial/04/28.jpg
+   :align: center
+
+
+Create Alternate Path
+^^^^^^^^^^^^^^^^^^^^^
+
+We'll next create an alternate path branching off the main path so the player has another way of reaching the goal
+
+Create a new node ``Layout Graph > Create Path``
+
+.. figure:: /images/tutorial/04/menu/L_CreatePath.png
+   :align: center
+
+Connect the nodes together like below
+
+.. figure:: /images/tutorial/04/29.png
+   :align: center
+
+Leave all the properties as default and hit play
+
+.. figure:: /images/tutorial/04/30.png
+   :align: center
+
+
+Select the ``Create Path`` node and inspect the properties
+
+.. figure:: /images/tutorial/04/31.png
+   :align: center
+
+
+Change the `Path Name` from ``branch`` to ``alt``.  We will be referencing this branch as ``alt`` in the future
+
+.. figure:: /images/tutorial/04/32.png
+   :align: center
+
+
+You can specify the paths from which this path should start and end.    The `Start From Path` parameter is set to ``main``, referencing the main branch we created in the previous section
+
+The `End On Path` is left empty, so the end of this path doesn't connect back to anything.   We'd like this path to connect back to the main branch. 
+
+Set the `End On Path`` parameter to ``main``
+
+.. figure:: /images/tutorial/04/33.png
+   :align: center
+
+
+This will make the alternate path (orange) connect back to the main path (green)
+
+.. figure:: /images/tutorial/04/34.png
+   :align: center
+
+
+Keep hitting Play for different results
+
+.. figure:: /images/tutorial/04/35.gif
+   :align: center
+
+
+
