@@ -112,6 +112,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#spawn-key-guardian">Spawn Key Guardian</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spawn-health-pack">Spawn Health Pack</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#finalize-layout-graph">Finalize Layout Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initialize-tilemap">Initialize Tilemap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-background-elevation">Add Background Elevation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-tree-overlays">Add Tree Overlays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finalize-tilemap">Finalize Tilemap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Build Dungeon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optimize-tilemap">Optimize Tilemap</a></li>
 </ul>
 </li>
 </ul>
@@ -235,13 +241,13 @@
 <div class="section" id="build-dungeon">
 <h3>Build Dungeon<a class="headerlink" href="#build-dungeon" title="Permalink to this headline">¶</a></h3>
 <p>Select the <code class="docutils literal notranslate"><span class="pre">DungeonGridFlow</span></code> game object and click <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">Dungeon</span></code> button from the inspector window</p>
-<div class="figure align-center" id="id1">
-<img alt="_images/081.jpg" src="_images/081.jpg" />
-<p class="caption"><span class="caption-text">GridFlow dungeon built using the Prehistoric theme</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
 <div class="figure align-center" id="id2">
+<img alt="_images/081.jpg" src="_images/081.jpg" />
+<p class="caption"><span class="caption-text">GridFlow dungeon built using the Prehistoric theme</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id3">
 <img alt="_images/091.jpg" src="_images/091.jpg" />
-<p class="caption"><span class="caption-text">GridFlow dungeons support key-locks</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">GridFlow dungeons support key-locks</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="open-grid-flow-editor">
@@ -264,14 +270,14 @@
 <h3>Link Editor with Dungeon<a class="headerlink" href="#link-editor-with-dungeon" title="Permalink to this headline">¶</a></h3>
 <p>We are going to link up the dungeon we have on the scene (<cite>DungeonGridFlow</cite> game object) with the Grid Flow Editor so when we generate a new dungeon in the editor, it syncs up the dungeon on the scene</p>
 <p>Click an empty space (grey area) in the Execution Graph</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id4">
 <img alt="_images/12.png" src="_images/12.png" />
-<p class="caption"><span class="caption-text">Click anywhere in the empty area</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Click anywhere in the empty area</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>This will show up the execution graph properties in the Inspector window</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <img alt="_images/13.png" src="_images/13.png" />
-<p class="caption"><span class="caption-text">Execution Graph properties</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Execution Graph properties</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Assign the dungeon game object by dragging the DungeonGridFlow over</p>
 <div class="figure align-center">
@@ -295,9 +301,9 @@
 <div class="section" id="explore-grid-flow-graph">
 <h3>Explore Grid Flow Graph<a class="headerlink" href="#explore-grid-flow-graph" title="Permalink to this headline">¶</a></h3>
 <p>After you’ve built a dungeon in the editor (by hitting the play button on the top left), you can select each node and see how the dungeon layout was built, as shown in the lower preview panels</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id6">
 <img alt="_images/flow_editor_node_preview.gif" src="_images/flow_editor_node_preview.gif" />
-<p class="caption"><span class="caption-text">Select a node to preview the build process</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Select a node to preview the build process</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -307,18 +313,18 @@
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
 <p>Destroy the existing dungeon and clear out the Flow Asset that we assigned earlier</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id7">
 <img alt="_images/17.png" src="_images/17.png" />
-<p class="caption"><span class="caption-text">DungeonGridFlow game object properties</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">DungeonGridFlow game object properties</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Create a new Grid Flow asset from either the Create menu or the Main Menu</p>
-<div class="figure align-center" id="id7">
-<img alt="_images/181.png" src="_images/181.png" />
-<p class="caption"><span class="caption-text">Create Menu</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</div>
 <div class="figure align-center" id="id8">
+<img alt="_images/181.png" src="_images/181.png" />
+<p class="caption"><span class="caption-text">Create Menu</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id9">
 <img alt="_images/19.png" src="_images/19.png" />
-<p class="caption"><span class="caption-text">Main Menu</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Main Menu</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>Rename to something appropriate and double click the grid flow asset to open it in the editor</p>
 <p>We won’t be needing the scene view for some time.  Dock the editor so we have more working area</p>
@@ -576,6 +582,9 @@
 <p>We’ll next create a key-lock system on the main path.  Our key will go on the Key Room we created earlier (<code class="docutils literal notranslate"><span class="pre">key_room</span></code> path) and the lock will be somewhere in the main branch (<code class="docutils literal notranslate"><span class="pre">main</span></code> path)</p>
 <p>Add a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Key</span> <span class="pre">Lock</span></code> and set it up as follows:</p>
 <div class="figure align-center">
+<img alt="_images/L_CreateKeyLock.png" src="_images/L_CreateKeyLock.png" />
+</div>
+<div class="figure align-center">
 <img alt="_images/45.png" src="_images/45.png" />
 </div>
 <div class="figure align-center">
@@ -654,6 +663,9 @@
 <h3>Spawn Enemies (Main, Alt)<a class="headerlink" href="#spawn-enemies-main-alt" title="Permalink to this headline">¶</a></h3>
 <p>We’ll use the <code class="docutils literal notranslate"><span class="pre">Spawn</span> <span class="pre">Items</span></code> node to spawn enemies on the <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">alt</span></code> paths</p>
 <p>Create a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Spawn</span> <span class="pre">Items</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/L_SpawnItems.png" src="_images/L_SpawnItems.png" />
+</div>
 <div class="figure align-center">
 <img alt="_images/53.png" src="_images/53.png" />
 </div>
@@ -844,15 +856,191 @@
 <li><p>Assign room types (Room, Corridor, Cave)</p></li>
 </ul>
 <p>Create a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Finalize</span> <span class="pre">Graph</span></code> and set it up as follows:</p>
-<p>Leave all the properties to default</p>
+<div class="figure align-center">
+<img alt="_images/L_Finalize.png" src="_images/L_Finalize.png" />
+</div>
 <div class="figure align-center">
 <img alt="_images/67.png" src="_images/67.png" />
 </div>
+<p>Leave all the properties to default</p>
 <div class="figure align-center">
 <img alt="_images/68.png" src="_images/68.png" />
 </div>
 <div class="figure align-center">
 <img alt="_images/69.gif" src="_images/69.gif" />
+</div>
+<p>We are now ready to create a tilemap from this</p>
+</div>
+<div class="section" id="initialize-tilemap">
+<h3>Initialize Tilemap<a class="headerlink" href="#initialize-tilemap" title="Permalink to this headline">¶</a></h3>
+<p>Create a new node <code class="docutils literal notranslate"><span class="pre">Tilemap</span> <span class="pre">&gt;</span> <span class="pre">Initialize</span> <span class="pre">Tilemap</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/T_Initialize.png" src="_images/T_Initialize.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/70.png" src="_images/70.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/71.png" src="_images/71.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/72.png" src="_images/72.png" />
+</div>
+<p>You can control the thickness of the caves from the <cite>Cave Thickness</cite> parameter.   Each node on the layout graph gets converted into rooms in the tilemap.</p>
+<p>The parameter <cite>Tilemap Size Per Node</cite> controls how many tiles are used to generate a room from the node. Bump this number up if you want more space in your rooms</p>
+<p>If you want a more uniform grid like look on your rooms, bring the <cite>Perturb Amount</cite> close to <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+<p><cite>Layout Padding</cite> adds extra tiles around the dungeon layout.   Set to <code class="docutils literal notranslate"><span class="pre">5</span></code> so we can apply some decorations outside the dungeon bounds</p>
+<p>When you select a node on the layout graph, the tiles that belong to the node light up.  This is controlled by the <cite>Color Settings</cite> parameters</p>
+</div>
+<div class="section" id="add-background-elevation">
+<h3>Add Background Elevation<a class="headerlink" href="#add-background-elevation" title="Permalink to this headline">¶</a></h3>
+<p>We are going to create overlays and merge them with the original tilemap.   Create the following two nodes:</p>
+<ul class="simple">
+<li><p>Create a node <code class="docutils literal notranslate"><span class="pre">Tilemap</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Tilemap</span> <span class="pre">Elevations</span></code></p></li>
+<li><p>Create a node <code class="docutils literal notranslate"><span class="pre">Tilemap</span> <span class="pre">&gt;</span> <span class="pre">Merge</span> <span class="pre">Tilemaps</span></code></p></li>
+</ul>
+<div class="figure align-center">
+<img alt="_images/T_CreateElevation.png" src="_images/T_CreateElevation.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/T_Merge.png" src="_images/T_Merge.png" />
+</div>
+<p>Link them up like below:</p>
+<div class="figure align-center">
+<img alt="_images/73.png" src="_images/73.png" />
+</div>
+<div class="figure align-center" id="id10">
+<img alt="_images/74.png" src="_images/74.png" />
+<p class="caption"><span class="caption-text">Create Tilemap Elevation properties</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>Update the properties</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Noise Frequency</strong></p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Num Steps</strong></p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Min Height</strong></p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Max Height</strong></p></td>
+<td><p>3.5</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Sea Level</strong></p></td>
+<td><p>-1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center" id="id11">
+<img alt="_images/75.png" src="_images/75.png" />
+<p class="caption"><span class="caption-text">Create Tilemap Elevation Node Result</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>We’ve specified the marker name as <code class="docutils literal notranslate"><span class="pre">Rock</span></code>.   If you place objects under the specified marker node in the theme editor, they will show up on these tiles at the given height</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Min/Max height is logical and will be mulitplied by the dungeon config’s Grid Size Y value.  If the GridSize is <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">2,</span> <span class="pre">4)</span></code> in the DungeonGridFlow game object’s config and the tile height happens to be <code class="docutils literal notranslate"><span class="pre">2.5</span></code>, the actual placement will be on <code class="docutils literal notranslate"><span class="pre">2.5</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">5</span></code></p>
+</div>
+</div>
+<div class="section" id="add-tree-overlays">
+<h3>Add Tree Overlays<a class="headerlink" href="#add-tree-overlays" title="Permalink to this headline">¶</a></h3>
+<p>We’ll overlay trees on our dungeon using a noise parameter. These overlays will be placed such that they will not block the main path</p>
+<p>Create a node <code class="docutils literal notranslate"><span class="pre">Tilemap</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Tilemap</span> <span class="pre">Overlay</span></code></p>
+<div class="figure align-center">
+<img alt="_images/T_CreateOverlay.png" src="_images/T_CreateOverlay.png" />
+</div>
+<div class="figure align-center" id="id12">
+<img alt="_images/76.png" src="_images/76.png" />
+<p class="caption"><span class="caption-text">Create Tilemap Overlay Node Connection</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id13">
+<img alt="_images/77.png" src="_images/77.png" />
+<p class="caption"><span class="caption-text">Create Tilemap Overlay Node properties</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 56%" />
+<col style="width: 44%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="2"><p><strong>Noise Settings</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>&gt; Noise Frequency</strong></p></td>
+<td><p>0.2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>&gt; Noise Max Value</strong></p></td>
+<td><p>1.5</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>&gt; Noise Threshold</strong></p></td>
+<td><p>0.75</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>&gt; Min Dist From Main Path</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p><strong>Merge Config</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>&gt; Max Height</strong></p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center" id="id14">
+<img alt="_images/78.png" src="_images/78.png" />
+<p class="caption"><span class="caption-text">Result of the Create Tilemap Overlay Node</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id15">
+<img alt="_images/79.png" src="_images/79.png" />
+<p class="caption"><span class="caption-text">Merged result</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="finalize-tilemap">
+<h3>Finalize Tilemap<a class="headerlink" href="#finalize-tilemap" title="Permalink to this headline">¶</a></h3>
+<p>Finalize the tilemap to complete the grid flow graph</p>
+<p>Create a node <code class="docutils literal notranslate"><span class="pre">Tilemap</span> <span class="pre">&gt;</span> <span class="pre">Finalize</span> <span class="pre">Tilemap</span></code></p>
+<div class="figure align-center">
+<img alt="_images/T_Finalize.png" src="_images/T_Finalize.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/80.png" src="_images/80.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/81.png" src="_images/81.png" />
+</div>
+<p>Finalize Tilemap node places all the items on to the tilemap (enemies, keys, bonus etc)</p>
+</div>
+<div class="section" id="id1">
+<h3>Build Dungeon<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Assign this grid flow graph to your DungeonGridFlow game object and click <cite>Build Dungeon</cite></p>
+<div class="figure align-center">
+<img alt="_images/82.png" src="_images/82.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/83.jpg" src="_images/83.jpg" />
+</div>
+</div>
+<div class="section" id="optimize-tilemap">
+<h3>Optimize Tilemap<a class="headerlink" href="#optimize-tilemap" title="Permalink to this headline">¶</a></h3>
+<p>When the tilemap based level is generated, there are many tiles that the player might never see, as they are far away from the dungeon layout</p>
+<div class="figure align-center">
+<img alt="_images/84.jpg" src="_images/84.jpg" />
+</div>
+<p>The <cite>Optimize Tilemap</cite> removes tiles that are away from the specified distance from the dungeon layout bounds</p>
+<div class="figure align-center" id="id16">
+<img alt="_images/86.png" src="_images/86.png" />
+<p class="caption"><span class="caption-text">Optimize Tilemap Node Result</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id17">
+<img alt="_images/87.gif" src="_images/87.gif" />
+<p class="caption"><span class="caption-text">Optimize Tilemap Before / After</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id18">
+<img alt="_images/85.gif" src="_images/85.gif" />
+<p class="caption"><span class="caption-text">Optimize Tilemap Before / After</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

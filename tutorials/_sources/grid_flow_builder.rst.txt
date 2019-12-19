@@ -448,7 +448,9 @@ We'll next create a key-lock system on the main path.  Our key will go on the Ke
 
 Add a new node ``Layout Graph > Create Key Lock`` and set it up as follows:
 
-
+.. figure:: /images/tutorial/04/menu/L_CreateKeyLock.png
+   :align: center
+   
 .. figure:: /images/tutorial/04/45.png
    :align: center
 
@@ -518,6 +520,9 @@ We'll use the ``Spawn Items`` node to spawn enemies on the ``main`` and ``alt`` 
 Create a new node ``Layout Graph > Spawn Items`` and set it up as follows:
 
 
+.. figure:: /images/tutorial/04/menu/L_SpawnItems.png
+   :align: center
+   
 .. figure:: /images/tutorial/04/53.png
    :align: center
 
@@ -665,10 +670,13 @@ After we are done designing the layout graph, we'll need to finalize it with the
 
 Create a new node ``Layout Graph > Finalize Graph`` and set it up as follows:
 
-Leave all the properties to default
+.. figure:: /images/tutorial/04/menu/L_Finalize.png
+   :align: center
 
 .. figure:: /images/tutorial/04/67.png
    :align: center
+
+Leave all the properties to default
 
 .. figure:: /images/tutorial/04/68.png
    :align: center
@@ -678,5 +686,200 @@ Leave all the properties to default
    :align: center
 
 
+We are now ready to create a tilemap from this
 
+
+
+Initialize Tilemap
+^^^^^^^^^^^^^^^^^^
+
+Create a new node ``Tilemap > Initialize Tilemap`` and set it up as follows:
+
+.. figure:: /images/tutorial/04/menu/T_Initialize.png
+   :align: center
+   
+   
+.. figure:: /images/tutorial/04/70.png
+   :align: center
+
+
+.. figure:: /images/tutorial/04/71.png
+   :align: center
+
+
+.. figure:: /images/tutorial/04/72.png
+   :align: center
+
+
+You can control the thickness of the caves from the `Cave Thickness` parameter.   Each node on the layout graph gets converted into rooms in the tilemap.  
+
+The parameter `Tilemap Size Per Node` controls how many tiles are used to generate a room from the node. Bump this number up if you want more space in your rooms
+
+If you want a more uniform grid like look on your rooms, bring the `Perturb Amount` close to ``0``
+
+`Layout Padding` adds extra tiles around the dungeon layout.   Set to ``5`` so we can apply some decorations outside the dungeon bounds
+
+When you select a node on the layout graph, the tiles that belong to the node light up.  This is controlled by the `Color Settings` parameters
+
+
+Add Background Elevation
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+We are going to create overlays and merge them with the original tilemap.   Create the following two nodes:
+
+* Create a node ``Tilemap > Create Tilemap Elevations``
+* Create a node ``Tilemap > Merge Tilemaps``
+
+.. figure:: /images/tutorial/04/menu/T_CreateElevation.png
+   :align: center
+   
+.. figure:: /images/tutorial/04/menu/T_Merge.png
+   :align: center
+
+
+Link them up like below:
+
+.. figure:: /images/tutorial/04/73.png
+   :align: center
+   
+.. figure:: /images/tutorial/04/74.png
+   :align: center
+   
+   Create Tilemap Elevation properties
+   
+Update the properties
+
+========================= =======================
+**Noise Frequency**       0.1
+**Num Steps**             8
+**Min Height**            0.5
+**Max Height**            3.5
+**Sea Level**             -1
+========================= =======================
+
+
+.. figure:: /images/tutorial/04/75.png
+   :align: center
+   
+   Create Tilemap Elevation Node Result
+
+
+We've specified the marker name as ``Rock``.   If you place objects under the specified marker node in the theme editor, they will show up on these tiles at the given height
+
+.. note:: The Min/Max height is logical and will be mulitplied by the dungeon config's Grid Size Y value.  If the GridSize is ``(4, 2, 4)`` in the DungeonGridFlow game object's config and the tile height happens to be ``2.5``, the actual placement will be on ``2.5 * 2 = 5``
+
+
+Add Tree Overlays
+^^^^^^^^^^^^^^^^^
+
+We'll overlay trees on our dungeon using a noise parameter. These overlays will be placed such that they will not block the main path
+
+Create a node ``Tilemap > Create Tilemap Overlay``
+
+.. figure:: /images/tutorial/04/menu/T_CreateOverlay.png
+   :align: center
+
+
+.. figure:: /images/tutorial/04/76.png
+   :align: center
+   
+   Create Tilemap Overlay Node Connection
+   
+.. figure:: /images/tutorial/04/77.png
+   :align: center
+   
+   Create Tilemap Overlay Node properties
+   
+
+============================= =======================
+**Noise Settings**
+-----------------------------------------------------
+**> Noise Frequency**         0.2
+**> Noise Max Value**         1.5
+**> Noise Threshold**         0.75
+**> Min Dist From Main Path** 1
+
+**Merge Config**
+-----------------------------------------------------
+**> Max Height**              1
+============================= =======================
+   
+.. figure:: /images/tutorial/04/78.png
+   :align: center
+   
+   Result of the Create Tilemap Overlay Node
+   
+.. figure:: /images/tutorial/04/79.png
+   :align: center
+   
+   Merged result
+   
+   
+Finalize Tilemap
+^^^^^^^^^^^^^^^^
+
+Finalize the tilemap to complete the grid flow graph
+
+Create a node ``Tilemap > Finalize Tilemap``
+
+.. figure:: /images/tutorial/04/menu/T_Finalize.png
+   :align: center
+   
+
+.. figure:: /images/tutorial/04/80.png
+   :align: center
+   
+   
+.. figure:: /images/tutorial/04/81.png
+   :align: center
+   
+Finalize Tilemap node places all the items on to the tilemap (enemies, keys, bonus etc)
+
+
+Build Dungeon
+^^^^^^^^^^^^^
+
+Assign this grid flow graph to your DungeonGridFlow game object and click `Build Dungeon`
+
+
+.. figure:: /images/tutorial/04/82.png
+   :align: center
+   
+   
+.. figure:: /images/tutorial/04/83.jpg
+   :align: center
+   
+
+
+Optimize Tilemap
+^^^^^^^^^^^^^^^^
+   
+When the tilemap based level is generated, there are many tiles that the player might never see, as they are far away from the dungeon layout
+
+.. figure:: /images/tutorial/04/84.jpg
+   :align: center
+   
+
+The `Optimize Tilemap` removes tiles that are away from the specified distance from the dungeon layout bounds
+   
+   
+.. figure:: /images/tutorial/04/86.png
+   :align: center
+   
+   Optimize Tilemap Node Result
+
+   
+.. figure:: /images/tutorial/04/87.gif
+   :align: center
+
+   Optimize Tilemap Before / After
+   
+   
+.. figure:: /images/tutorial/04/85.gif
+   :align: center
+
+   Optimize Tilemap Before / After
+  
+
+   
 
