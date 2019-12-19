@@ -102,6 +102,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#create-grid">Create Grid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#create-main-path">Create Main Path</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#create-alternate-path">Create Alternate Path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-treasure-room-main">Create Treasure Room (Main)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-treasure-room-alt">Create Treasure Room (Alt)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-key-room">Create Key Room</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-key-lock-main">Create Key-Lock (Main)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-key-lock-treasure-main">Create Key-Lock (Treasure Main)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spawn-enemies-main-alt">Spawn Enemies (Main, Alt)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spawn-bonus-treasure-chests">Spawn Bonus (Treasure Chests)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spawn-key-guardian">Spawn Key Guardian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spawn-health-pack">Spawn Health Pack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finalize-layout-graph">Finalize Layout Graph</a></li>
 </ul>
 </li>
 </ul>
@@ -375,7 +385,7 @@
 </div>
 <div class="section" id="create-alternate-path">
 <h3>Create Alternate Path<a class="headerlink" href="#create-alternate-path" title="Permalink to this headline">¶</a></h3>
-<p>We’ll next create an alternate path branching off the main path so the player has another way of reaching the goal</p>
+<p>We’ll next create an alternate path pathing off the main path so the player has another way of reaching the goal</p>
 <p>Create a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Path</span></code></p>
 <div class="figure align-center">
 <img alt="_images/L_CreatePath.png" src="_images/L_CreatePath.png" />
@@ -392,16 +402,42 @@
 <div class="figure align-center">
 <img alt="_images/311.png" src="_images/311.png" />
 </div>
-<p>Change the <cite>Path Name</cite> from <code class="docutils literal notranslate"><span class="pre">branch</span></code> to <code class="docutils literal notranslate"><span class="pre">alt</span></code>.  We will be referencing this branch as <code class="docutils literal notranslate"><span class="pre">alt</span></code> in the future</p>
+<p>Change the <cite>Path Name</cite> from <code class="docutils literal notranslate"><span class="pre">path</span></code> to <code class="docutils literal notranslate"><span class="pre">alt</span></code>.  We will be referencing this path as <code class="docutils literal notranslate"><span class="pre">alt</span></code> in the future</p>
 <div class="figure align-center">
 <img alt="_images/321.png" src="_images/321.png" />
 </div>
-<p>You can specify the paths from which this path should start and end.    The <cite>Start From Path</cite> parameter is set to <code class="docutils literal notranslate"><span class="pre">main</span></code>, referencing the main branch we created in the previous section</p>
-<p>The <cite>End On Path</cite> is left empty, so the end of this path doesn’t connect back to anything.   We’d like this path to connect back to the main branch.</p>
+<p>You can specify the paths from which this path should start and end.    The <cite>Start From Path</cite> parameter is set to <code class="docutils literal notranslate"><span class="pre">main</span></code>, referencing the main path we created in the previous section</p>
+<p>The <cite>End On Path</cite> is left empty, so the end of this path doesn’t connect back to anything.   We’d like this path to connect back to the main path.</p>
 <p>Set the <cite>End On Path`</cite> parameter to <code class="docutils literal notranslate"><span class="pre">main</span></code></p>
 <div class="figure align-center">
 <img alt="_images/33.png" src="_images/33.png" />
 </div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Min Path Size</strong></p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Max Path Size</strong></p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Path Name</strong></p></td>
+<td><p>alt</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Node Color</strong></p></td>
+<td><p>orange</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Start From Path</strong></p></td>
+<td><p>main</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>End On Path</strong></p></td>
+<td><p>main</p></td>
+</tr>
+</tbody>
+</table>
 <p>This will make the alternate path (orange) connect back to the main path (green)</p>
 <div class="figure align-center">
 <img alt="_images/341.png" src="_images/341.png" />
@@ -409,6 +445,414 @@
 <p>Keep hitting Play for different results</p>
 <div class="figure align-center">
 <img alt="_images/35.gif" src="_images/35.gif" />
+</div>
+</div>
+<div class="section" id="create-treasure-room-main">
+<h3>Create Treasure Room (Main)<a class="headerlink" href="#create-treasure-room-main" title="Permalink to this headline">¶</a></h3>
+<p>We’ll add a treasure room connected to the main path</p>
+<p>Add a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Path</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/37.png" src="_images/37.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/36.png" src="_images/36.png" />
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Min Path Size</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Max Path Size</strong></p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Path Name</strong></p></td>
+<td><p>treasure_main</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Node Color</strong></p></td>
+<td><p>yellow</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Start From Path</strong></p></td>
+<td><p>main</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>End On Path</strong></p></td>
+<td><p>main</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<img alt="_images/38.png" src="_images/38.png" />
+</div>
+</div>
+<div class="section" id="create-treasure-room-alt">
+<h3>Create Treasure Room (Alt)<a class="headerlink" href="#create-treasure-room-alt" title="Permalink to this headline">¶</a></h3>
+<p>We’ll add another treasure room connected to the <code class="docutils literal notranslate"><span class="pre">alt</span></code> path but keep the <code class="docutils literal notranslate"><span class="pre">End</span> <span class="pre">On</span> <span class="pre">Path</span></code> parameter empty so it doesn’t connect back to anything:</p>
+<p>Add a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Path</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/39.png" src="_images/39.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/40.png" src="_images/40.png" />
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Min Path Size</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Max Path Size</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Path Name</strong></p></td>
+<td><p>treasure_alt</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Node Color</strong></p></td>
+<td><p>yellow</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Start From Path</strong></p></td>
+<td><p>alt</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>End On Path</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<img alt="_images/41.png" src="_images/41.png" />
+</div>
+</div>
+<div class="section" id="create-key-room">
+<h3>Create Key Room<a class="headerlink" href="#create-key-room" title="Permalink to this headline">¶</a></h3>
+<p>We’ll create a room connected to the main path which will act as the key room. We’ll later configure this room to have a key that opens up a lock in the main path. It will also have a NPC (key guardian) guarding the key</p>
+<p>Add a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Path</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/42.png" src="_images/42.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/43.png" src="_images/43.png" />
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Min Path Size</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Max Path Size</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Path Name</strong></p></td>
+<td><p>key_room</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Node Color</strong></p></td>
+<td><p>cyan</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Start From Path</strong></p></td>
+<td><p>main</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>End On Path</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<img alt="_images/44.png" src="_images/44.png" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We’ve named this path <code class="docutils literal notranslate"><span class="pre">key_room</span></code>. It will be referenced later on when creating the key locks</p>
+</div>
+</div>
+<div class="section" id="create-key-lock-main">
+<h3>Create Key-Lock (Main)<a class="headerlink" href="#create-key-lock-main" title="Permalink to this headline">¶</a></h3>
+<p>We’ll next create a key-lock system on the main path.  Our key will go on the Key Room we created earlier (<code class="docutils literal notranslate"><span class="pre">key_room</span></code> path) and the lock will be somewhere in the main branch (<code class="docutils literal notranslate"><span class="pre">main</span></code> path)</p>
+<p>Add a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Key</span> <span class="pre">Lock</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/45.png" src="_images/45.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/46.png" src="_images/46.png" />
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key Branch</strong></p></td>
+<td><p>key_room</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Lock Branch</strong></p></td>
+<td><p>main</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Key Marker Name</strong></p></td>
+<td><p>KeyMain</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Lock Marker Name</strong></p></td>
+<td><p>LockMain</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<img alt="_images/47.png" src="_images/47.png" />
+</div>
+<p>Specify the <cite>Key Branch</cite> as <code class="docutils literal notranslate"><span class="pre">key_room</span></code> and <cite>Lock Branch</cite> as <code class="docutils literal notranslate"><span class="pre">main</span></code></p>
+<p>Set marker name for the key as <code class="docutils literal notranslate"><span class="pre">KeyMain</span></code> and lock as <code class="docutils literal notranslate"><span class="pre">LockMain</span></code>.    Then in the theme file, you’d create marker nodes with these names and add your key and locked gate prefabs.</p>
+<p>The prehistoric theme already has these setup</p>
+<div class="figure align-center">
+<img alt="_images/48.png" src="_images/48.png" />
+</div>
+</div>
+<div class="section" id="create-key-lock-treasure-main">
+<h3>Create Key-Lock (Treasure Main)<a class="headerlink" href="#create-key-lock-treasure-main" title="Permalink to this headline">¶</a></h3>
+<p>We need a key-lock to guard the treasure room in the main branch</p>
+<p>Add a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Key</span> <span class="pre">Lock</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/49.png" src="_images/49.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/50.png" src="_images/50.png" />
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key Branch</strong></p></td>
+<td><p>main</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Lock Branch</strong></p></td>
+<td><p>treasure_main</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Key Marker Name</strong></p></td>
+<td><p>KeyTreasure</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Lock Marker Name</strong></p></td>
+<td><p>LockTreasure</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<img alt="_images/51.png" src="_images/51.png" />
+</div>
+<p>Set marker name for the key as <code class="docutils literal notranslate"><span class="pre">KeyTreasure</span></code> and lock as <code class="docutils literal notranslate"><span class="pre">LockTreasure</span></code>.    Then in the theme file, you’d create marker nodes with these names and add your key and locked gate prefabs.</p>
+<p>The prehistoric theme already has these setup</p>
+<div class="figure align-center">
+<img alt="_images/52.png" src="_images/52.png" />
+</div>
+</div>
+<div class="section" id="spawn-enemies-main-alt">
+<h3>Spawn Enemies (Main, Alt)<a class="headerlink" href="#spawn-enemies-main-alt" title="Permalink to this headline">¶</a></h3>
+<p>We’ll use the <code class="docutils literal notranslate"><span class="pre">Spawn</span> <span class="pre">Items</span></code> node to spawn enemies on the <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">alt</span></code> paths</p>
+<p>Create a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Spawn</span> <span class="pre">Items</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/53.png" src="_images/53.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/54.png" src="_images/54.png" />
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Paths</strong></p></td>
+<td><p>main, alt</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Item Type</strong></p></td>
+<td><p>Enemy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Marker Name</strong></p></td>
+<td><p>Grunt</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Min Count</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Max Count</strong></p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<img alt="_images/55.png" src="_images/55.png" />
+</div>
+<p>This will spawn enemies in the nodes, gradually increasing the number of enemies based on the difficulty. The difficulty increases as we get closer to the goal. You can control this from the <cite>Spawn Method</cite> properties. Leave it to default for now</p>
+<p>We’ve specified the marker name as <code class="docutils literal notranslate"><span class="pre">Grunt</span></code> and an appropriate marker node should be created in the theme file so we can spawn prefabs under it.  The pre-historic theme already has this marker</p>
+<div class="figure align-center">
+<img alt="_images/56.png" src="_images/56.png" />
+</div>
+<p>You can control the placement of items (in the tilemap) from the <cite>Placement Method</cite> property section. Leave it to default for now</p>
+</div>
+<div class="section" id="spawn-bonus-treasure-chests">
+<h3>Spawn Bonus (Treasure Chests)<a class="headerlink" href="#spawn-bonus-treasure-chests" title="Permalink to this headline">¶</a></h3>
+<p>Spawn treasure chests in your bonus rooms using the <cite>Spawn Items</cite> node</p>
+<p>Create a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Spawn</span> <span class="pre">Items</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/57.png" src="_images/57.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/58.png" src="_images/58.png" />
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 54%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Paths</strong></p></td>
+<td><p>treasure_main, treasure_alt</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Item Type</strong></p></td>
+<td><p>Bonus</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Marker Name</strong></p></td>
+<td><p>Treasure</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Min Count</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Max Count</strong></p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<img alt="_images/59.png" src="_images/59.png" />
+</div>
+<p>We’ve specified the marker name as <code class="docutils literal notranslate"><span class="pre">Treasure</span></code> and an appropriate marker node should be created in the theme file so we can spawn prefabs the treasure chest under it.  The pre-historic theme already has this marker</p>
+<div class="figure align-center">
+<img alt="_images/60.png" src="_images/60.png" />
+</div>
+</div>
+<div class="section" id="spawn-key-guardian">
+<h3>Spawn Key Guardian<a class="headerlink" href="#spawn-key-guardian" title="Permalink to this headline">¶</a></h3>
+<p>We’ll add an NPC in the Key room guarding the key</p>
+<p>Create a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Spawn</span> <span class="pre">Items</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/61.png" src="_images/61.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/62.png" src="_images/62.png" />
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Paths</strong></p></td>
+<td><p>key_room</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Item Type</strong></p></td>
+<td><p>Enemy</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Marker Name</strong></p></td>
+<td><p>KeyGuardian</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Min Count</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Max Count</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Min Spawn Difficulty</strong></p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<img alt="_images/63.png" src="_images/63.png" />
+</div>
+<p>You’ll need to create a marker named <code class="docutils literal notranslate"><span class="pre">KeyGuardian</span></code> in the theme file and place your NPC prefab under it.   This marker doesn’t exist in the <cite>Prehistoric</cite> theme and you’ll need to create it yourself if you want to visualize it</p>
+<p>The <cite>Min Spawn Difficulty</cite> is set to <code class="docutils literal notranslate"><span class="pre">1</span></code>.   The first node in the branch will have a difficulty of <code class="docutils literal notranslate"><span class="pre">0</span></code> and the last node <code class="docutils literal notranslate"><span class="pre">1</span></code>.  Sometimes, the yellow branch may be 3 nodes long.  Since we want the chest to occur only on the last node, we’ve set this value to <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+</div>
+<div class="section" id="spawn-health-pack">
+<h3>Spawn Health Pack<a class="headerlink" href="#spawn-health-pack" title="Permalink to this headline">¶</a></h3>
+<p>We’ll use the <cite>Spawn Items</cite> node to spawn a few health pickups along the <cite>main</cite> and <cite>alt</cite> paths</p>
+<p>This section also shows you how to use the <cite>Custom</cite> Item Type</p>
+<p>Create a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Spawn</span> <span class="pre">Items</span></code> and set it up as follows:</p>
+<div class="figure align-center">
+<img alt="_images/64.png" src="_images/64.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/65.png" src="_images/65.png" />
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Paths</strong></p></td>
+<td><p>main, alt</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Item Type</strong></p></td>
+<td><p>Custom</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Marker Name</strong></p></td>
+<td><p>HealthPickup</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Min Count</strong></p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Max Count</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Spawn Probability</strong></p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p><strong>Custom Item Info</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>&gt;&gt; <strong>Item Type</strong></p></td>
+<td><p>health_pickup</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;&gt; <strong>Text</strong></p></td>
+<td><p>Health</p></td>
+</tr>
+<tr class="row-even"><td><p>&gt;&gt; <strong>Text Color</strong></p></td>
+<td><p>[Red]</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;&gt; <strong>Background Color</strong></p></td>
+<td><p>[White]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<img alt="_images/66.png" src="_images/66.png" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You’ll need to create a marker named <code class="docutils literal notranslate"><span class="pre">HealthPickup</span></code> in your theme file and add your health pack prefab</p>
+</div>
+</div>
+<div class="section" id="finalize-layout-graph">
+<h3>Finalize Layout Graph<a class="headerlink" href="#finalize-layout-graph" title="Permalink to this headline">¶</a></h3>
+<p>After we are done designing the layout graph, we’ll need to finalize it with the <cite>Finalize Graph</cite> node.    This node does a few things:</p>
+<ul class="simple">
+<li><p>Move the locks from the nodes on to the links</p></li>
+<li><p>Create one way doors (so we don’t go around locked doors)</p></li>
+<li><p>Assign room types (Room, Corridor, Cave)</p></li>
+</ul>
+<p>Create a new node <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">Graph</span> <span class="pre">&gt;</span> <span class="pre">Finalize</span> <span class="pre">Graph</span></code> and set it up as follows:</p>
+<p>Leave all the properties to default</p>
+<div class="figure align-center">
+<img alt="_images/67.png" src="_images/67.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/68.png" src="_images/68.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/69.gif" src="_images/69.gif" />
 </div>
 </div>
 </div>

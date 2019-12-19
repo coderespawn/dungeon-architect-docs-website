@@ -298,7 +298,7 @@ You can adjust the size of the path.   ``Start Marker Name`` and ``Goal Marker N
 Create Alternate Path
 ^^^^^^^^^^^^^^^^^^^^^
 
-We'll next create an alternate path branching off the main path so the player has another way of reaching the goal
+We'll next create an alternate path pathing off the main path so the player has another way of reaching the goal
 
 Create a new node ``Layout Graph > Create Path``
 
@@ -322,21 +322,30 @@ Select the ``Create Path`` node and inspect the properties
    :align: center
 
 
-Change the `Path Name` from ``branch`` to ``alt``.  We will be referencing this branch as ``alt`` in the future
+Change the `Path Name` from ``path`` to ``alt``.  We will be referencing this path as ``alt`` in the future
 
 .. figure:: /images/tutorial/04/32.png
    :align: center
 
 
-You can specify the paths from which this path should start and end.    The `Start From Path` parameter is set to ``main``, referencing the main branch we created in the previous section
+You can specify the paths from which this path should start and end.    The `Start From Path` parameter is set to ``main``, referencing the main path we created in the previous section
 
-The `End On Path` is left empty, so the end of this path doesn't connect back to anything.   We'd like this path to connect back to the main branch. 
+The `End On Path` is left empty, so the end of this path doesn't connect back to anything.   We'd like this path to connect back to the main path. 
 
 Set the `End On Path`` parameter to ``main``
 
 .. figure:: /images/tutorial/04/33.png
    :align: center
 
+
+======================= =======================
+**Min Path Size**       3
+**Max Path Size**       3
+**Path Name**           alt
+**Node Color**          orange
+**Start From Path**     main
+**End On Path**         main
+======================= =======================
 
 This will make the alternate path (orange) connect back to the main path (green)
 
@@ -348,6 +357,326 @@ Keep hitting Play for different results
 
 .. figure:: /images/tutorial/04/35.gif
    :align: center
+
+
+Create Treasure Room (Main)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We'll add a treasure room connected to the main path
+
+Add a new node ``Layout Graph > Create Path`` and set it up as follows:
+
+.. figure:: /images/tutorial/04/37.png
+   :align: center
+
+.. figure:: /images/tutorial/04/36.png
+   :align: center
+
+======================= =======================
+**Min Path Size**       1
+**Max Path Size**       3
+**Path Name**           treasure_main
+**Node Color**          yellow
+**Start From Path**     main
+**End On Path**         main
+======================= =======================
+
+.. figure:: /images/tutorial/04/38.png
+   :align: center
+
+
+Create Treasure Room (Alt)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We'll add another treasure room connected to the ``alt`` path but keep the ``End On Path`` parameter empty so it doesn't connect back to anything:
+
+Add a new node ``Layout Graph > Create Path`` and set it up as follows:
+
+.. figure:: /images/tutorial/04/39.png
+   :align: center
+
+.. figure:: /images/tutorial/04/40.png
+   :align: center
+
+======================= =======================
+**Min Path Size**       1
+**Max Path Size**       1
+**Path Name**           treasure_alt
+**Node Color**          yellow
+**Start From Path**     alt
+**End On Path**         
+======================= =======================
+
+.. figure:: /images/tutorial/04/41.png
+   :align: center
+
+
+Create Key Room
+^^^^^^^^^^^^^^^
+
+We'll create a room connected to the main path which will act as the key room. We'll later configure this room to have a key that opens up a lock in the main path. It will also have a NPC (key guardian) guarding the key
+
+Add a new node ``Layout Graph > Create Path`` and set it up as follows:
+
+
+.. figure:: /images/tutorial/04/42.png
+   :align: center
+
+.. figure:: /images/tutorial/04/43.png
+   :align: center
+
+======================= =======================
+**Min Path Size**       1
+**Max Path Size**       1
+**Path Name**           key_room
+**Node Color**          cyan
+**Start From Path**     main
+**End On Path**         
+======================= =======================
+
+.. figure:: /images/tutorial/04/44.png
+   :align: center
+
+.. note:: We've named this path ``key_room``. It will be referenced later on when creating the key locks
+
+
+Create Key-Lock (Main)
+^^^^^^^^^^^^^^^^^^^^^^
+
+We'll next create a key-lock system on the main path.  Our key will go on the Key Room we created earlier (``key_room`` path) and the lock will be somewhere in the main branch (``main`` path)
+
+
+Add a new node ``Layout Graph > Create Key Lock`` and set it up as follows:
+
+
+.. figure:: /images/tutorial/04/45.png
+   :align: center
+
+.. figure:: /images/tutorial/04/46.png
+   :align: center
+
+======================= =======================
+**Key Branch**          key_room
+**Lock Branch**         main
+**Key Marker Name**     KeyMain
+**Lock Marker Name**    LockMain
+======================= =======================
+
+.. figure:: /images/tutorial/04/47.png
+   :align: center
+
+
+Specify the `Key Branch` as ``key_room`` and `Lock Branch` as ``main``
+
+Set marker name for the key as ``KeyMain`` and lock as ``LockMain``.    Then in the theme file, you'd create marker nodes with these names and add your key and locked gate prefabs.   
+
+The prehistoric theme already has these setup
+
+.. figure:: /images/tutorial/04/48.png
+   :align: center
+   
+
+Create Key-Lock (Treasure Main)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We need a key-lock to guard the treasure room in the main branch
+
+Add a new node ``Layout Graph > Create Key Lock`` and set it up as follows:
+
+
+.. figure:: /images/tutorial/04/49.png
+   :align: center
+
+.. figure:: /images/tutorial/04/50.png
+   :align: center
+
+======================= =======================
+**Key Branch**          main
+**Lock Branch**         treasure_main
+**Key Marker Name**     KeyTreasure
+**Lock Marker Name**    LockTreasure
+======================= =======================
+
+
+.. figure:: /images/tutorial/04/51.png
+   :align: center
+
+
+Set marker name for the key as ``KeyTreasure`` and lock as ``LockTreasure``.    Then in the theme file, you'd create marker nodes with these names and add your key and locked gate prefabs.   
+
+The prehistoric theme already has these setup
+
+.. figure:: /images/tutorial/04/52.png
+   :align: center
+   
+   
+Spawn Enemies (Main, Alt)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We'll use the ``Spawn Items`` node to spawn enemies on the ``main`` and ``alt`` paths
+
+Create a new node ``Layout Graph > Spawn Items`` and set it up as follows:
+
+
+.. figure:: /images/tutorial/04/53.png
+   :align: center
+
+.. figure:: /images/tutorial/04/54.png
+   :align: center
+
+======================= =======================
+**Paths**               main, alt
+**Item Type**           Enemy
+**Marker Name**         Grunt
+**Min Count**           1
+**Max Count**           5
+======================= =======================
+
+.. figure:: /images/tutorial/04/55.png
+   :align: center
+
+
+This will spawn enemies in the nodes, gradually increasing the number of enemies based on the difficulty. The difficulty increases as we get closer to the goal. You can control this from the `Spawn Method` properties. Leave it to default for now
+
+
+We've specified the marker name as ``Grunt`` and an appropriate marker node should be created in the theme file so we can spawn prefabs under it.  The pre-historic theme already has this marker
+
+
+.. figure:: /images/tutorial/04/56.png
+   :align: center
+
+
+You can control the placement of items (in the tilemap) from the `Placement Method` property section. Leave it to default for now
+
+Spawn Bonus (Treasure Chests)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Spawn treasure chests in your bonus rooms using the `Spawn Items` node
+
+
+Create a new node ``Layout Graph > Spawn Items`` and set it up as follows:
+
+
+.. figure:: /images/tutorial/04/57.png
+   :align: center
+
+.. figure:: /images/tutorial/04/58.png
+   :align: center
+
+======================= =======================
+**Paths**               treasure_main, treasure_alt
+**Item Type**           Bonus
+**Marker Name**         Treasure
+**Min Count**           1
+**Max Count**           1
+======================= =======================
+
+.. figure:: /images/tutorial/04/59.png
+   :align: center
+   
+
+We've specified the marker name as ``Treasure`` and an appropriate marker node should be created in the theme file so we can spawn prefabs the treasure chest under it.  The pre-historic theme already has this marker
+
+.. figure:: /images/tutorial/04/60.png
+   :align: center
+   
+
+Spawn Key Guardian
+^^^^^^^^^^^^^^^^^^
+
+We'll add an NPC in the Key room guarding the key
+
+Create a new node ``Layout Graph > Spawn Items`` and set it up as follows:
+
+
+
+.. figure:: /images/tutorial/04/61.png
+   :align: center
+
+.. figure:: /images/tutorial/04/62.png
+   :align: center
+
+========================= =======================
+**Paths**                 key_room
+**Item Type**             Enemy
+**Marker Name**           KeyGuardian
+**Min Count**             1
+**Max Count**             1
+**Min Spawn Difficulty**  1
+========================= =======================
+
+.. figure:: /images/tutorial/04/63.png
+   :align: center
+   
+You'll need to create a marker named ``KeyGuardian`` in the theme file and place your NPC prefab under it.   This marker doesn't exist in the `Prehistoric` theme and you'll need to create it yourself if you want to visualize it
+
+
+The `Min Spawn Difficulty` is set to ``1``.   The first node in the branch will have a difficulty of ``0`` and the last node ``1``.  Sometimes, the yellow branch may be 3 nodes long.  Since we want the chest to occur only on the last node, we've set this value to ``1``
+
+Spawn Health Pack
+^^^^^^^^^^^^^^^^^
+
+We'll use the `Spawn Items` node to spawn a few health pickups along the `main` and `alt` paths
+
+This section also shows you how to use the `Custom` Item Type 
+
+Create a new node ``Layout Graph > Spawn Items`` and set it up as follows:
+
+
+
+.. figure:: /images/tutorial/04/64.png
+   :align: center
+
+.. figure:: /images/tutorial/04/65.png
+   :align: center
+
+========================= =======================
+**Paths**                 main, alt
+**Item Type**             Custom
+**Marker Name**           HealthPickup
+**Min Count**             0
+**Max Count**             1
+**Spawn Probability**     0.5 
+
+**Custom Item Info**
+-------------------------------------------------
+>> **Item Type**          health_pickup
+>> **Text**               Health
+>> **Text Color**         [Red]
+>> **Background Color**   [White]
+========================= =======================
+
+.. figure:: /images/tutorial/04/66.png
+   :align: center
+   
+   
+.. note:: You'll need to create a marker named ``HealthPickup`` in your theme file and add your health pack prefab
+
+
+
+Finalize Layout Graph
+^^^^^^^^^^^^^^^^^^^^^
+
+After we are done designing the layout graph, we'll need to finalize it with the `Finalize Graph` node.    This node does a few things:
+
+* Move the locks from the nodes on to the links
+* Create one way doors (so we don't go around locked doors)
+* Assign room types (Room, Corridor, Cave)
+
+Create a new node ``Layout Graph > Finalize Graph`` and set it up as follows:
+
+Leave all the properties to default
+
+.. figure:: /images/tutorial/04/67.png
+   :align: center
+
+.. figure:: /images/tutorial/04/68.png
+   :align: center
+
+
+.. figure:: /images/tutorial/04/69.gif
+   :align: center
+
 
 
 
