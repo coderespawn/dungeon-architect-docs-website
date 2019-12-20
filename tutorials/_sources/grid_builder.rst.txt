@@ -56,3 +56,41 @@ Move the `Platform Volume` and scale it to control the position and size of your
 Theme Override Volume
 ^^^^^^^^^^^^^^^^^^^^^
 
+Theme Override Volumes let you apply another theme on certain portions of your dungeons that are covered by this volume.  These are useful for adding variations to your dungeons. 
+
+
+Navigate to ``Asset/DungeonArchitect/Prefabs`` and drag drop the ``ThemeOverrideVolume`` prefab on to the scene
+
+.. figure:: /images/tutorial/06/06.png
+   :align: center
+   
+
+Move and scale it to cover a certain portion of the dungeon
+
+
+.. figure:: /images/tutorial/06/07.jpg
+   :align: center
+   
+   
+Select the theme override volume you just dropped and inspect the properties and assign the DungeonGrid reference
+
+.. figure:: /images/tutorial/06/08.png
+   :align: center
+
+
+Navigate to ``Assets/DungeonArchitect_Samples/Demo_Theme_SimpleShapes/Themes`` and assign the theme ``Theme_Basic_White`` to the Theme Override Volume
+
+.. figure:: /images/tutorial/06/09.png
+   :align: center
+
+
+Click ``Rebuild Dungeon``
+
+
+.. figure:: /images/tutorial/06/10.jpg
+   :align: center
+   
+
+
+
+
