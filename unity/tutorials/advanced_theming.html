@@ -88,7 +88,15 @@
 <li class="toctree-l1"><a class="reference internal" href="builder_grid_flow.html">Grid Flow Builder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="builder_snap_flow.html">Snap Flow Builder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="builder_grid.html">Grid Builder</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Theming</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Theming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#selection-rules">Selection Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-1">Example #1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2">Example #2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#transform-rules">Transform Rules</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_dungeon_concepts.html">Advanced Dungeons</a></li>
 </ul>
 <p class="caption"><span class="caption-text">MORE BUILDERS</span></p>
@@ -167,6 +175,43 @@
 <h1>Advanced Theming<a class="headerlink" href="#advanced-theming" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-center">
 <img alt="_images/wip.png" src="_images/wip.png" />
+</div>
+<div class="section" id="selection-rules">
+<h2>Selection Rules<a class="headerlink" href="#selection-rules" title="Permalink to this headline">¶</a></h2>
+<p>One way to select the node in a theme graph is by setting the probablity.  If you want more control, you can write you own selection logic in a script</p>
+<div class="section" id="example-1">
+<h3>Example #1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
+<p>Different tiles for rooms and corridors</p>
+</div>
+<div class="section" id="example-2">
+<h3>Example #2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+<p>In this example the towers are too crowded and close to each other.</p>
+<div class="figure align-center">
+<img alt="_images/01.jpg" src="_images/01.jpg" />
+</div>
+<p>A selector rule is created to select alternate cells</p>
+<div class="figure align-center">
+<img alt="_images/022.jpg" src="_images/022.jpg" />
+</div>
+<div class="figure align-center">
+<img alt="_images/03.jpg" src="_images/03.jpg" />
+</div>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">DungeonArchitect</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AlternateSelectionRule</span> <span class="p">:</span> <span class="n">SelectorRule</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">override</span> <span class="kt">bool</span> <span class="nf">CanSelect</span><span class="p">(</span><span class="n">PropSocket</span> <span class="n">socket</span><span class="p">,</span> <span class="n">Matrix4x4</span> <span class="n">propTransform</span><span class="p">,</span> <span class="n">DungeonModel</span> <span class="n">model</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Random</span> <span class="n">random</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">gridPosition</span><span class="p">.</span><span class="n">x</span> <span class="p">+</span> <span class="n">socket</span><span class="p">.</span><span class="n">gridPosition</span><span class="p">.</span><span class="n">z</span><span class="p">)</span> <span class="p">%</span> <span class="m">2</span> <span class="p">==</span> <span class="m">0</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="transform-rules">
+<h2>Transform Rules<a class="headerlink" href="#transform-rules" title="Permalink to this headline">¶</a></h2>
+<p>A transform rule lets you apply an offset using a script. These are great for randomization or handling any special case of object alignment through script</p>
 </div>
 </div>
 
