@@ -1105,12 +1105,14 @@ Create a Material as below:
 
 You can now apply this material anywhere (e.g. in a large billboard in your world, a small map that the player holds,  dashboard of a vehicle etc)
 
-You can also check the sample game to see how this was done
 
-================== ===========================
-**Tablet Prefab**  `Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Prefab/Tablet_Map`
-**Material**       `Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Materials/Mat_TabletScreen`
-================== ===========================
+.. seealso::
+	Check the sample game to see how this was done
+
+	================== ===========================
+	**Tablet Prefab**  `Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Prefab/Tablet_Map`
+	**Material**       `Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Materials/Mat_TabletScreen`
+	================== ===========================
 
 
 Minimap Tracked Objects
@@ -1128,7 +1130,7 @@ The minimap can track any object in the scene.  You do this by adding the `GridF
    :align: center
    
    Added to the Enemy prefab
-   
+
 
 It has the following features:
 
@@ -1139,14 +1141,15 @@ It has the following features:
 
 You'd want to turn on `Explores Fog of War` only for the player and other relavant objects.   The icon can be greyscale and you can apply a tint on it with different colors (e.g. on key icon but different colors applied to the red key prefab, blue key prefab and so on)
 
-You can also check the sample game prefabs to see how the component was configured
+.. seealso::
+	Check the sample game prefabs to see how the component was configured
 
-==================== ====================
-Player Controller    Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/DemoGameSupportFiles/Prefabs/GridFlowPlayerController
-Grund NPC            Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/DemoGameSupportFiles/Prefabs/Enemy
-Key (Red)            Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Prefab/KeySkull_Red
-Key (Blue)           Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Prefab/KeySkull_Blue
-Door (Yellow)        Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Prefab/DoorLargeLocked_Yellow
-Door (Green)         Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Prefab/DoorLargeLocked_Green
-==================== ====================
+	==================== ====================
+	Player Controller    Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/DemoGameSupportFiles/Prefabs/GridFlowPlayerController
+	Grund NPC            Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/DemoGameSupportFiles/Prefabs/Enemy
+	Key (Red)            Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Prefab/KeySkull_Red
+	Key (Blue)           Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Prefab/KeySkull_Blue
+	Door (Yellow)        Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Prefab/DoorLargeLocked_Yellow
+	Door (Green)         Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Art/Prefab/DoorLargeLocked_Green
+	==================== ====================
 
