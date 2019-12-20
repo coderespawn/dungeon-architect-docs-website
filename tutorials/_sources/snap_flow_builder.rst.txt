@@ -1,10 +1,6 @@
 Snap Flow Builder
 =================
 
-
-Introduction
-------------
-
 The Snap Builder generates a dungeon by stitching together pre-built rooms prefabs.   The rules for stitching them is controlled by Graph Grammars
 
 In this page, we'll walk through the creation process.  

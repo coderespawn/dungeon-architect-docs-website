@@ -8,16 +8,16 @@ Welcome to Dungeon Architect Tutorials
 
 .. toctree::
    :maxdepth: 2
-   :caption: Tutorials:
+   :caption: Tutorials
    
    create_first_dungeon
    design_first_theme
    launch_pad
    grid_flow_builder
    snap_flow_builder
-   mario_builder
+   grid_builder
    simple_city_builder
+   mario_builder
    other_builders
    advanced_theming
-   advanced_dungeon_concpets
-
+   advanced_dungeon_concepts
