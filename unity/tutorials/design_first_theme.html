@@ -101,14 +101,22 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="launch_pad.html">Launch Pad Window</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grid_flow_builder.html">Grid Flow Builder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="snap_flow_builder.html">Snap Flow Builder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grid_builder.html">Grid Builder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simple_city_builder.html">Simple City Builder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mario_builder.html">Mario Builder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="other_builders.html">Other Builders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_grid_flow.html">Grid Flow Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_snap_flow.html">Snap Flow Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_grid.html">Grid Builder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_theming.html">Advanced Theming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced_dungeon_concepts.html">Advanced Dungeons</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MORE BUILDERS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="builder_simple_city.html">Simple City Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_mario.html">Mario Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_infinity_cave.html">Infinity Caves Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_bsp.html">Spatial Partition Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_floor_plan.html">Floor Plan Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_circular_city.html">Circular City Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_isaac.html">Isaac Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_maze.html">Maze Builder</a></li>
 </ul>
 
             
@@ -191,7 +199,7 @@
 </div>
 <p>This will create a theme file in the current open directory in the Projects window</p>
 <div class="figure align-center">
-<img alt="_images/03.png" src="_images/03.png" />
+<img alt="_images/032.png" src="_images/032.png" />
 </div>
 </div>
 <div class="section" id="open-the-theme-file">
@@ -206,7 +214,7 @@
 <p>Destroy the existing dungeon by selecting <code class="docutils literal notranslate"><span class="pre">DungeonGrid</span></code> game object and click <code class="docutils literal notranslate"><span class="pre">Destroy</span> <span class="pre">Dungeon</span></code> button</p>
 <p>Assign the theme file that you just created, on to the DungeonGrid game object</p>
 <div class="figure align-center">
-<img alt="_images/05.png" src="_images/05.png" />
+<img alt="_images/051.png" src="_images/051.png" />
 </div>
 <p>Click <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">Dungeon</span></code> and nothing should appear.   That’s because we haven’t added prefab mappings on the theme yet</p>
 </div>
@@ -220,15 +228,15 @@
 <h3>Add Ground<a class="headerlink" href="#add-ground" title="Permalink to this headline">¶</a></h3>
 <p>Drag-drop the ground prefab mesh on to the Theme Editor</p>
 <div class="figure align-center">
-<img alt="_images/07.jpg" src="_images/07.jpg" />
+<img alt="_images/071.jpg" src="_images/071.jpg" />
 </div>
 <p>Link up the mesh node with the <code class="docutils literal notranslate"><span class="pre">Ground</span></code> marker node.  When you do, you should see a live preview on the scene view with the dungeon using this ground mesh</p>
 <div class="figure align-center">
-<img alt="_images/08.jpg" src="_images/08.jpg" />
+<img alt="_images/081.jpg" src="_images/081.jpg" />
 </div>
 <p>For the live preview to work, make sure the “Realtime Update” button is enabled in the Theme Editor</p>
 <div class="figure align-center">
-<img alt="_images/09.jpg" src="_images/09.jpg" />
+<img alt="_images/091.jpg" src="_images/091.jpg" />
 </div>
 <p>Another criteria for the live preview to work is that a dungeon in the scene should reference the theme that is currently being edited in the theme editor</p>
 </div>
@@ -236,7 +244,7 @@
 <h3>Add More Prefabs<a class="headerlink" href="#add-more-prefabs" title="Permalink to this headline">¶</a></h3>
 <p>Go ahead and add prefabs under the following markers: <strong>Wall</strong>, <strong>Fence</strong> and <strong>Door</strong></p>
 <div class="figure align-center">
-<img alt="_images/10.jpg" src="_images/10.jpg" />
+<img alt="_images/104.jpg" src="_images/104.jpg" />
 </div>
 <div class="figure align-center">
 <img alt="_images/11.jpg" src="_images/11.jpg" />
@@ -253,7 +261,7 @@
 <img alt="_images/13.jpg" src="_images/13.jpg" />
 </div>
 <div class="figure align-center">
-<img alt="_images/14.jpg" src="_images/14.jpg" />
+<img alt="_images/141.jpg" src="_images/141.jpg" />
 </div>
 </div>
 <div class="section" id="add-windows">
@@ -265,7 +273,7 @@
 <p>The other one (<code class="docutils literal notranslate"><span class="pre">Wall2</span></code>) has a window. Lets configure the theme to sometimes use this second mesh so we have windows</p>
 <p>Drag drop <code class="docutils literal notranslate"><span class="pre">Wall2</span></code> prefab on to the theme editor and place it <strong>before</strong> (left of) the existing wall prefab node</p>
 <div class="figure align-center">
-<img alt="_images/16.jpg" src="_images/16.jpg" />
+<img alt="_images/161.jpg" src="_images/161.jpg" />
 </div>
 <p>When you connect this to the <code class="docutils literal notranslate"><span class="pre">Wall</span></code> marker node, you’ll notice it has picked up the window node for all the walls</p>
 <div class="figure align-center">
@@ -275,7 +283,7 @@
 <p>There are multiple ways you can control this condition, the simplest being adjusting the probablity of selection.</p>
 <p>Select the node you just dropped and change the probability to <code class="docutils literal notranslate"><span class="pre">0.5</span></code> (this would mean it gets selected 50% of the time).  The other 50% of the time, it would not be selected and the execution would then move to the next node, and hence selecting the non-windowed wall node</p>
 <div class="figure align-center">
-<img alt="_images/18.png" src="_images/18.png" />
+<img alt="_images/181.png" src="_images/181.png" />
 </div>
 <div class="figure align-center" id="id3">
 <img alt="_images/19.jpg" src="_images/19.jpg" />
@@ -304,7 +312,7 @@
 <p>Lets adjust the offset of the photo frame (position and rotation) to make it properly align with the inner walls</p>
 <p>Select the photo frame node and change the position to <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">2,</span> <span class="pre">-0.22)</span></code> and rotation to <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">180,</span> <span class="pre">0)</span></code></p>
 <div class="figure align-center">
-<img alt="_images/24.png" src="_images/24.png" />
+<img alt="_images/241.png" src="_images/241.png" />
 </div>
 <p>The photo frame is aligned with the walls</p>
 <div class="figure align-center">
@@ -320,7 +328,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">Marker</span> <span class="pre">Emitters</span></code> allow you to emit marker names from any of your dropped prefab nodes.  This means, we can define a new marker node (e.g. <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code>) and then emit that marker from the wall node that doesn’t have a window (<code class="docutils literal notranslate"><span class="pre">Wall1</span></code> prefab).  All our wall decorations can now go under this <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code> marker and it will show up only near solid walls</p>
 <p>Right click on an empty area in the theme editor and select <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Marker</span> <span class="pre">Node</span></code></p>
 <div class="figure align-center">
-<img alt="_images/27.png" src="_images/27.png" />
+<img alt="_images/271.png" src="_images/271.png" />
 </div>
 <p>Select the node and change its name to <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code></p>
 <div class="figure align-center">
@@ -328,19 +336,19 @@
 </div>
 <p>Break the link to the photo frame</p>
 <div class="figure align-center">
-<img alt="_images/29.png" src="_images/29.png" />
+<img alt="_images/291.png" src="_images/291.png" />
 </div>
 <p>Connect this under <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code> marker node.  All the future wall decorations can also go under this marker</p>
 <div class="figure align-center">
-<img alt="_images/30.png" src="_images/30.png" />
+<img alt="_images/301.png" src="_images/301.png" />
 </div>
 <p>Now emit this marker from the wall node that doesn’t contain a window</p>
 <p>Drag a link out of the bottom of the solid wall prefab node and release the mouse in an empty area</p>
 <div class="figure align-center">
-<img alt="_images/31.png" src="_images/31.png" />
+<img alt="_images/311.png" src="_images/311.png" />
 </div>
 <div class="figure align-center">
-<img alt="_images/32.png" src="_images/32.png" />
+<img alt="_images/321.png" src="_images/321.png" />
 </div>
 <p>You can follow the same method to create another type of decoration (e.g. MyWindowDeco) and emit it from under the windowed wall node. In this example, I’ve added a flower pot in the windows</p>
 <div class="figure align-center">
@@ -353,7 +361,7 @@
 <p>Sometimes, it is difficult to line up the ground node, as there is no point of reference to compare with.</p>
 <p>In that case, turn on Debug Draw and build the dungeon.</p>
 <div class="figure align-center">
-<img alt="_images/34.png" src="_images/34.png" />
+<img alt="_images/341.png" src="_images/341.png" />
 </div>
 <div class="figure align-center">
 <img alt="_images/35.jpg" src="_images/35.jpg" />

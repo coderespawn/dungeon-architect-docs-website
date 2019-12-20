@@ -13,11 +13,21 @@ Welcome to Dungeon Architect Tutorials
    create_first_dungeon
    design_first_theme
    launch_pad
-   grid_flow_builder
-   snap_flow_builder
-   grid_builder
-   simple_city_builder
-   mario_builder
-   other_builders
+   builder_grid_flow
+   builder_snap_flow
+   builder_grid
    advanced_theming
    advanced_dungeon_concepts
+
+.. toctree::
+   :maxdepth: 2
+   :caption: MORE BUILDERS
+   
+   builder_simple_city
+   builder_mario
+   builder_infinity_cave
+   builder_bsp
+   builder_floor_plan
+   builder_circular_city
+   builder_isaac
+   builder_maze

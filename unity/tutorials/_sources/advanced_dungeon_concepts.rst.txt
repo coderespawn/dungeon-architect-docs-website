@@ -1,4 +1,7 @@
 Advanced Dungeons
 =================
 
-Body Content
+.. figure:: /images/wip.png
+   :align: center
+
+

@@ -1,4 +1,6 @@
 Advanced Theming
 ================
 
-Body Content
+.. figure:: /images/wip.png
+   :align: center
+
