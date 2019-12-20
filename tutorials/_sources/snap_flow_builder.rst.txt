@@ -5,13 +5,9 @@ Snap Flow Builder
 Introduction
 ------------
 
-The snap builder is a new type of layout method for Dungeon Architect.  It builds a dungeon by stitching together pre-built rooms prefabs.
+The Snap Builder generates a dungeon by stitching together pre-built rooms prefabs.   The rules for stitching them is controlled by Graph Grammars
 
 In this page, we'll walk through the creation process.  
-
-.. note::
-   This page is meant to be the placeholder till the rest of the document is complete.  The info in this page should be useful to get you started
-
 
 
 Preparing the Scene
