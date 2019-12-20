@@ -120,6 +120,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#optimize-tilemap">Optimize Tilemap</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#key-lock-system">Key Lock System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#key-component">Key Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lock-component">Lock Component</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sample">Sample</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mini-map">Mini-Map</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="snap_flow_builder.html">Snap Flow Builder</a></li>
@@ -414,7 +421,7 @@
 </div>
 <p>You can specify the paths from which this path should start and end.    The <cite>Start From Path</cite> parameter is set to <code class="docutils literal notranslate"><span class="pre">main</span></code>, referencing the main path we created in the previous section</p>
 <p>The <cite>End On Path</cite> is left empty, so the end of this path doesn’t connect back to anything.   We’d like this path to connect back to the main path.</p>
-<p>Set the <cite>End On Path`</cite> parameter to <code class="docutils literal notranslate"><span class="pre">main</span></code></p>
+<p>Set the <cite>End On Path</cite> parameter to <code class="docutils literal notranslate"><span class="pre">main</span></code></p>
 <div class="figure align-center">
 <img alt="_images/33.png" src="_images/33.png" />
 </div>
@@ -717,8 +724,8 @@
 </div>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 46%" />
-<col style="width: 54%" />
+<col style="width: 48%" />
+<col style="width: 52%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Paths</strong></p></td>
@@ -736,6 +743,9 @@
 <tr class="row-odd"><td><p><strong>Max Count</strong></p></td>
 <td><p>1</p></td>
 </tr>
+<tr class="row-even"><td><p><strong>Min Spawn Difficulty</strong></p></td>
+<td><p>1</p></td>
+</tr>
 </tbody>
 </table>
 <div class="figure align-center">
@@ -745,6 +755,7 @@
 <div class="figure align-center">
 <img alt="_images/60.png" src="_images/60.png" />
 </div>
+<p>The <cite>Min Spawn Difficulty</cite> is set to <code class="docutils literal notranslate"><span class="pre">1</span></code>.   The first node in the branch will have a difficulty of <code class="docutils literal notranslate"><span class="pre">0</span></code> and the last node <code class="docutils literal notranslate"><span class="pre">1</span></code>.  Sometimes, the yellow branch may be 3 nodes long.  Since we want the chest to occur only on the last node, we’ve set this value to <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
 </div>
 <div class="section" id="spawn-key-guardian">
 <h3>Spawn Key Guardian<a class="headerlink" href="#spawn-key-guardian" title="Permalink to this headline">¶</a></h3>
@@ -777,16 +788,12 @@
 <tr class="row-odd"><td><p><strong>Max Count</strong></p></td>
 <td><p>1</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Min Spawn Difficulty</strong></p></td>
-<td><p>1</p></td>
-</tr>
 </tbody>
 </table>
 <div class="figure align-center">
 <img alt="_images/63.png" src="_images/63.png" />
 </div>
 <p>You’ll need to create a marker named <code class="docutils literal notranslate"><span class="pre">KeyGuardian</span></code> in the theme file and place your NPC prefab under it.   This marker doesn’t exist in the <cite>Prehistoric</cite> theme and you’ll need to create it yourself if you want to visualize it</p>
-<p>The <cite>Min Spawn Difficulty</cite> is set to <code class="docutils literal notranslate"><span class="pre">1</span></code>.   The first node in the branch will have a difficulty of <code class="docutils literal notranslate"><span class="pre">0</span></code> and the last node <code class="docutils literal notranslate"><span class="pre">1</span></code>.  Sometimes, the yellow branch may be 3 nodes long.  Since we want the chest to occur only on the last node, we’ve set this value to <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
 </div>
 <div class="section" id="spawn-health-pack">
 <h3>Spawn Health Pack<a class="headerlink" href="#spawn-health-pack" title="Permalink to this headline">¶</a></h3>
@@ -1038,11 +1045,119 @@
 <img alt="_images/87.gif" src="_images/87.gif" />
 <p class="caption"><span class="caption-text">Optimize Tilemap Before / After</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
+<p>Create a node <code class="docutils literal notranslate"><span class="pre">Tilemap</span> <span class="pre">&gt;</span> <span class="pre">Optimize</span> <span class="pre">Tilemap</span></code></p>
+<div class="figure align-center">
+<img alt="_images/T_Optimize.png" src="_images/T_Optimize.png" />
+</div>
+<p>Connect it before the <cite>Finalize Tilemap</cite> node like below:</p>
+<div class="figure align-center">
+<img alt="_images/88.png" src="_images/88.png" />
+</div>
 <div class="figure align-center" id="id18">
+<img alt="_images/89.png" src="_images/89.png" />
+<p class="caption"><span class="caption-text">Optimize Tilemap Node properties</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>Rebuild the dungeon in the scene view</p>
+<div class="figure align-center" id="id19">
 <img alt="_images/85.gif" src="_images/85.gif" />
-<p class="caption"><span class="caption-text">Optimize Tilemap Before / After</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Optimize Tilemap Before / After</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 </div>
+</div>
+<div class="section" id="key-lock-system">
+<h2>Key Lock System<a class="headerlink" href="#key-lock-system" title="Permalink to this headline">¶</a></h2>
+<p>The spawned Key and Lock game objects will have the following components attached to it by Dungeon Architect</p>
+<div class="figure align-center" id="id20">
+<img alt="_images/90.jpg" src="_images/90.jpg" />
+<p class="caption"><span class="caption-text">New Components attached to the Key Prefab</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id21">
+<img alt="_images/91.jpg" src="_images/91.jpg" />
+<p class="caption"><span class="caption-text">New Components attached to the Locked Door Prefab</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="key-component">
+<h3>Key Component<a class="headerlink" href="#key-component" title="Permalink to this headline">¶</a></h3>
+<p>The builder will attach a new component <code class="docutils literal notranslate"><span class="pre">GridFlowDoorKeyComponent</span></code> to the spawned key prefab</p>
+<div class="figure align-center">
+<img alt="_images/92.png" src="_images/92.png" />
+</div>
+<p>This component contains the KeyId and a reference to all the locks that this key can open</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key Id</strong></p></td>
+<td><p>The Key Id</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Valid Lock Ids</strong></p></td>
+<td><p>List of Lock Ids that can be opened by this key</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Lock Refs</strong></p></td>
+<td><p>References to the spawned lock game objects that can be opened by this key</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="lock-component">
+<h3>Lock Component<a class="headerlink" href="#lock-component" title="Permalink to this headline">¶</a></h3>
+<p>The builder will attach a new component <code class="docutils literal notranslate"><span class="pre">GridFlowDoorLockComponent</span></code> to the spawned lock prefab</p>
+<div class="figure align-center">
+<img alt="_images/93.png" src="_images/93.png" />
+</div>
+<p>This component contains the LockId and a reference to all the keys that open this lock</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Lock Id</strong></p></td>
+<td><p>The Lock Id</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Valid Key Ids</strong></p></td>
+<td><p>List of Key Ids that open this lock</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Valid Key Refs</strong></p></td>
+<td><p>References to the spawned key game objects that open this lock</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sample">
+<h3>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h3>
+<p>Game Sample Scene: <code class="docutils literal notranslate"><span class="pre">Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderDemo_Game</span></code></p>
+<p>The GridFlow game sample contains a working example of how you can implement a key lock system. There are many ways of implementing this, this sample shows one such way.</p>
+<p>The Sample has the following scripts:</p>
+<ul class="simple">
+<li><p>Inventory: Saves the picked up keys in the inventory</p></li>
+<li><p>LockedDoor: A script that implements the door opening logic. This script is added to the locked door prefab. When something collides with the door trigger, it checks if it has an inventory.  If it does, it checks if the inventory contains any of the valid keys that can open this door</p></li>
+</ul>
+<p>LockedDoor script location: <code class="docutils literal notranslate"><span class="pre">Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scripts/DemoGame/Door/LockedDoor.cs</span></code></p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="nf">CanOpenDoor</span><span class="p">(</span><span class="n">Collider</span> <span class="n">other</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="kt">var</span> <span class="n">inventory</span> <span class="p">=</span> <span class="n">other</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">GetComponentInChildren</span><span class="p">&lt;</span><span class="n">Inventory</span><span class="p">&gt;();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">inventory</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// Check if any of the valid keys are present in the inventory of the collided object</span>
+                <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">validKey</span> <span class="k">in</span> <span class="n">validKeys</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">inventory</span><span class="p">.</span><span class="n">ContainsItem</span><span class="p">(</span><span class="n">validKey</span><span class="p">))</span>
+                        <span class="p">{</span>
+                                <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mini-map">
+<h2>Mini-Map<a class="headerlink" href="#mini-map" title="Permalink to this headline">¶</a></h2>
+<p>Display a 2D minimap with fog of war</p>
 </div>
 </div>
 

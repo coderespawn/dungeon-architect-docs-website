@@ -332,7 +332,7 @@ You can specify the paths from which this path should start and end.    The `Sta
 
 The `End On Path` is left empty, so the end of this path doesn't connect back to anything.   We'd like this path to connect back to the main path. 
 
-Set the `End On Path`` parameter to ``main``
+Set the `End On Path` parameter to ``main``
 
 .. figure:: /images/tutorial/04/33.png
    :align: center
@@ -568,13 +568,14 @@ Create a new node ``Layout Graph > Spawn Items`` and set it up as follows:
 .. figure:: /images/tutorial/04/58.png
    :align: center
 
-======================= =======================
-**Paths**               treasure_main, treasure_alt
-**Item Type**           Bonus
-**Marker Name**         Treasure
-**Min Count**           1
-**Max Count**           1
-======================= =======================
+========================= =======================
+**Paths**                 treasure_main, treasure_alt
+**Item Type**             Bonus
+**Marker Name**           Treasure
+**Min Count**             1
+**Max Count**             1
+**Min Spawn Difficulty**  1
+========================= =======================
 
 .. figure:: /images/tutorial/04/59.png
    :align: center
@@ -585,6 +586,8 @@ We've specified the marker name as ``Treasure`` and an appropriate marker node s
 .. figure:: /images/tutorial/04/60.png
    :align: center
    
+
+The `Min Spawn Difficulty` is set to ``1``.   The first node in the branch will have a difficulty of ``0`` and the last node ``1``.  Sometimes, the yellow branch may be 3 nodes long.  Since we want the chest to occur only on the last node, we've set this value to ``1``
 
 Spawn Key Guardian
 ^^^^^^^^^^^^^^^^^^
@@ -607,7 +610,6 @@ Create a new node ``Layout Graph > Spawn Items`` and set it up as follows:
 **Marker Name**           KeyGuardian
 **Min Count**             1
 **Max Count**             1
-**Min Spawn Difficulty**  1
 ========================= =======================
 
 .. figure:: /images/tutorial/04/63.png
@@ -615,8 +617,6 @@ Create a new node ``Layout Graph > Spawn Items`` and set it up as follows:
    
 You'll need to create a marker named ``KeyGuardian`` in the theme file and place your NPC prefab under it.   This marker doesn't exist in the `Prehistoric` theme and you'll need to create it yourself if you want to visualize it
 
-
-The `Min Spawn Difficulty` is set to ``1``.   The first node in the branch will have a difficulty of ``0`` and the last node ``1``.  Sometimes, the yellow branch may be 3 nodes long.  Since we want the chest to occur only on the last node, we've set this value to ``1``
 
 Spawn Health Pack
 ^^^^^^^^^^^^^^^^^
@@ -875,11 +875,124 @@ The `Optimize Tilemap` removes tiles that are away from the specified distance f
    Optimize Tilemap Before / After
    
    
+   
+Create a node ``Tilemap > Optimize Tilemap``
+
+.. figure:: /images/tutorial/04/menu/T_Optimize.png
+   :align: center
+   
+Connect it before the `Finalize Tilemap` node like below:
+
+.. figure:: /images/tutorial/04/88.png
+   :align: center
+   
+   
+.. figure:: /images/tutorial/04/89.png
+   :align: center
+   
+   Optimize Tilemap Node properties
+
+
+Rebuild the dungeon in the scene view
+
 .. figure:: /images/tutorial/04/85.gif
    :align: center
 
    Optimize Tilemap Before / After
   
 
+
+Key Lock System
+---------------
+
+The spawned Key and Lock game objects will have the following components attached to it by Dungeon Architect
+
+
+.. figure:: /images/tutorial/04/90.jpg
+   :align: center
    
+   New Components attached to the Key Prefab
+
+
+.. figure:: /images/tutorial/04/91.jpg
+   :align: center
+   
+   New Components attached to the Locked Door Prefab
+
+
+Key Component
+^^^^^^^^^^^^^
+
+The builder will attach a new component ``GridFlowDoorKeyComponent`` to the spawned key prefab
+
+.. figure:: /images/tutorial/04/92.png
+   :align: center
+
+
+This component contains the KeyId and a reference to all the locks that this key can open
+
+==================== =============================================
+**Key Id**           The Key Id
+**Valid Lock Ids**   List of Lock Ids that can be opened by this key
+**Lock Refs**        References to the spawned lock game objects that can be opened by this key
+==================== =============================================
+
+Lock Component
+^^^^^^^^^^^^^^
+
+The builder will attach a new component ``GridFlowDoorLockComponent`` to the spawned lock prefab
+
+.. figure:: /images/tutorial/04/93.png
+   :align: center
+
+This component contains the LockId and a reference to all the keys that open this lock
+
+==================== =============================================
+**Lock Id**          The Lock Id
+**Valid Key Ids**    List of Key Ids that open this lock
+**Valid Key Refs**   References to the spawned key game objects that open this lock
+==================== =============================================
+
+
+Sample
+^^^^^^
+
+Game Sample Scene: ``Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderDemo_Game``
+
+The GridFlow game sample contains a working example of how you can implement a key lock system. There are many ways of implementing this, this sample shows one such way. 
+
+The Sample has the following scripts:
+
+* Inventory: Saves the picked up keys in the inventory
+* LockedDoor: A script that implements the door opening logic. This script is added to the locked door prefab. When something collides with the door trigger, it checks if it has an inventory.  If it does, it checks if the inventory contains any of the valid keys that can open this door
+
+
+LockedDoor script location: ``Assets/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scripts/DemoGame/Door/LockedDoor.cs`` 
+
+.. code-block:: c#
+
+	bool CanOpenDoor(Collider other)
+	{
+		var inventory = other.gameObject.GetComponentInChildren<Inventory>();
+		if (inventory != null)
+		{
+			// Check if any of the valid keys are present in the inventory of the collided object
+			foreach (var validKey in validKeys)
+			{
+				if (inventory.ContainsItem(validKey))
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+
+
+
+Mini-Map
+--------
+
+Display a 2D minimap with fog of war 
 
