@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Design your first theme &mdash; Dungeon Architect [UE4]  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Launch Pad Window" href="launch_pad.html" />
+    <link rel="prev" title="Create your first Dungeon" href="create_first_dungeon.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Dungeon Architect [UE4]
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="create_first_dungeon.html">Create your first Dungeon</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Design your first theme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-theme-file">Create a Theme File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#design-the-theme">Design the Theme</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-sample-assets">Use Sample Assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-ground">Add Ground</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-more-meshes">Add More Meshes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-wall-pillars">Add Wall Pillars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-windows">Add Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-wall-decorations">Add Wall Decorations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#marker-emitters">Marker Emitters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#align-with-offset">Align with Offset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recap">Recap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="launch_pad.html">Launch Pad Window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_grid_flow.html">Grid Flow Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_snap_flow.html">Snap Flow Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_grid.html">Grid Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_theming.html">Advanced Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_dungeon_concepts.html">Advanced Dungeons</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MORE BUILDERS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="builder_simple_city.html">Simple City Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_floor_plan.html">Floor Plan Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_isaac.html">Isaac Builder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Dungeon Architect [UE4]</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Design your first theme</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="design-your-first-theme">
+<h1>Design your first theme<a class="headerlink" href="#design-your-first-theme" title="Permalink to this headline">¶</a></h1>
+<p>A theme file is a mapping between <strong>marker</strong> names (like Walls, Ground, Door etc) and the meshes that you provide.    The assets you map here will be used to build your dungeon</p>
+<img alt="_images/012.jpg" class="align-center" src="_images/012.jpg" />
+<img alt="_images/024.jpg" class="align-center" src="_images/024.jpg" />
+<p>In the previous section, we created a dungeon with an existing theme file.  In this section, we’ll create one ourselves</p>
+<div class="section" id="create-a-theme-file">
+<h2>Create a Theme File<a class="headerlink" href="#create-a-theme-file" title="Permalink to this headline">¶</a></h2>
+<p>Right click on the <cite>Content Browser</cite> and choose <code class="docutils literal notranslate"><span class="pre">Dungeon</span> <span class="pre">Theme</span></code></p>
+<img alt="_images/032.png" class="align-center" src="_images/032.png" />
+<p>This will create the Dungeon Theme asset.  Double click it to open the Theme Editor</p>
+<img alt="_images/03A.png" class="align-center" src="_images/03A.png" />
+<img alt="_images/04.jpg" class="align-center" src="_images/04.jpg" />
+</div>
+<div class="section" id="design-the-theme">
+<h2>Design the Theme<a class="headerlink" href="#design-the-theme" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="use-sample-assets">
+<h3>Use Sample Assets<a class="headerlink" href="#use-sample-assets" title="Permalink to this headline">¶</a></h3>
+<p>In the <cite>Content Browser</cite>, enable plugin contents so we can use sample meshes that come with the plugin to design our theme</p>
+<p>Click <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Options</span></code> button and make sure <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Plugin</span> <span class="pre">Content</span></code> is selected</p>
+<img alt="_images/051.png" class="align-center" src="_images/051.png" />
+<img alt="_images/062.png" class="align-center" src="_images/062.png" />
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">Dungeon</span> <span class="pre">Architect</span> <span class="pre">Content</span> <span class="pre">&gt;</span> <span class="pre">Samples</span> <span class="pre">&gt;</span> <span class="pre">DA_Candy</span> <span class="pre">&gt;</span> <span class="pre">Meshes</span></code>.  This folder contains a set of meshes we can use for our dungeon</p>
+<img alt="_images/071.jpg" class="align-center" src="_images/071.jpg" />
+</div>
+<div class="section" id="add-ground">
+<h3>Add Ground<a class="headerlink" href="#add-ground" title="Permalink to this headline">¶</a></h3>
+<p>Drag-drop the ground mesh on to the Theme Editor</p>
+<img alt="_images/081.jpg" class="align-center" src="_images/081.jpg" />
+<p>Link up the mesh node with the <code class="docutils literal notranslate"><span class="pre">Ground</span></code> marker node.  When you do, you should see a live preview on theme editor’s Preview Viewport window</p>
+<img alt="_images/091.jpg" class="align-center" src="_images/091.jpg" />
+<img alt="_images/104.jpg" class="align-center" src="_images/104.jpg" />
+</div>
+<div class="section" id="add-more-meshes">
+<h3>Add More Meshes<a class="headerlink" href="#add-more-meshes" title="Permalink to this headline">¶</a></h3>
+<p>Go ahead and add more meshes under the following markers: <strong>Wall</strong>, <strong>Fence</strong> and <strong>Door</strong></p>
+<img alt="_images/11.jpg" class="align-center" src="_images/11.jpg" />
+<img alt="_images/12.jpg" class="align-center" src="_images/12.jpg" />
+</div>
+<div class="section" id="add-wall-pillars">
+<h3>Add Wall Pillars<a class="headerlink" href="#add-wall-pillars" title="Permalink to this headline">¶</a></h3>
+<p>Drag drop the <code class="docutils literal notranslate"><span class="pre">Pillar2</span></code> mesh to the theme editor and link it to the <code class="docutils literal notranslate"><span class="pre">WallSeparator</span></code> marker node</p>
+<img alt="_images/13.jpg" class="align-center" src="_images/13.jpg" />
+<img alt="_images/141.jpg" class="align-center" src="_images/141.jpg" />
+<p>We’ll need to make this pillar a bit bigger. Select the node you just dropped and modify the Scale parameter under Offset category</p>
+<img alt="_images/15.jpg" class="align-center" src="_images/15.jpg" />
+<p>The live preview should update automatically to show the new scaled pillars</p>
+<img alt="_images/161.jpg" class="align-center" src="_images/161.jpg" />
+</div>
+<div class="section" id="add-windows">
+<h3>Add Windows<a class="headerlink" href="#add-windows" title="Permalink to this headline">¶</a></h3>
+<p>We have two wall meshes in the samples folder</p>
+<img alt="_images/17.jpg" class="align-center" src="_images/17.jpg" />
+<p>The other one (<code class="docutils literal notranslate"><span class="pre">Wall2</span></code>) has a window. Lets configure the theme to sometimes use this second mesh, so we can have some windows</p>
+<p>Drag drop <code class="docutils literal notranslate"><span class="pre">Wall2</span></code> mesh on to the theme editor and place it <strong>before</strong> (left of) the existing wall mesh node</p>
+<img alt="_images/18A.jpg" class="align-center" src="_images/18A.jpg" />
+<p>Link them up. The execution index should get updated, indicating their execution order</p>
+<img alt="_images/19.jpg" class="align-center" src="_images/19.jpg" />
+<p>Notice that the first node has been picked up and all the walls have been replaced with the windowed version</p>
+<img alt="_images/20.jpg" class="align-center" src="_images/20.jpg" />
+<p>This is because Dungeon Architect starts executing the nodes from left to right. When the condition was satisfied to pick the first node, it stopped execution and never came to the second node.</p>
+<p>There are multiple ways you can control this condition, the simplest being adjusting the probablity of selection.</p>
+<p>Select the node you just dropped and change the probability to <code class="docutils literal notranslate"><span class="pre">0.5</span></code> (this would mean it gets selected 50% of the time).  The other 50% of the time, it would not be selected and the execution would then move to the next node, and hence selecting the non-windowed wall node</p>
+<img alt="_images/21.jpg" class="align-center" src="_images/21.jpg" />
+<div class="figure align-center" id="id1">
+<img alt="_images/22.jpg" src="_images/22.jpg" />
+<p class="caption"><span class="caption-text">Half the walls now have windows</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="add-wall-decorations">
+<h3>Add Wall Decorations<a class="headerlink" href="#add-wall-decorations" title="Permalink to this headline">¶</a></h3>
+<p>There’s a photo frame mesh we’d like to attach to every wall.  Drag drop this mesh to the theme editor <strong>before</strong> the two existing wall nodes and link it to the <code class="docutils literal notranslate"><span class="pre">Wall</span></code> marker node</p>
+<img alt="_images/23.jpg" class="align-center" src="_images/23.jpg" />
+<p>This will cause all the walls to disappear and be replaced with this photo frame</p>
+<img alt="_images/24.jpg" class="align-center" src="_images/24.jpg" />
+<p>This is because once the photo frame node was selected, the execution stopped there and the wall nodes further down the line were not executed.</p>
+<p>Selected the photo frame and uncheck the flag “Consume on Attach”.  This will cause the execution to continue further even though this node was selected by the theming engine</p>
+<img alt="_images/251.png" class="align-center" src="_images/251.png" />
+<img alt="_images/26.jpg" class="align-center" src="_images/26.jpg" />
+<p>Lets adjust the offset of the photo frame (position and rotation) to make it properly align with the inner walls</p>
+<p>Select the photo frame node and change the Offset’s <strong>Position</strong> to <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">-22,</span> <span class="pre">200)</span></code> and <strong>Rotation</strong> to <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">180)</span></code></p>
+<img alt="_images/271.png" class="align-center" src="_images/271.png" />
+<p>The photo frame is aligned now with the walls correctly</p>
+<img alt="_images/281.jpg" class="align-center" src="_images/281.jpg" />
+</div>
+<div class="section" id="marker-emitters">
+<h3>Marker Emitters<a class="headerlink" href="#marker-emitters" title="Permalink to this headline">¶</a></h3>
+<p>We have an issue with the photo frames. They also spawn near windows</p>
+<img alt="_images/29.jpg" class="align-center" src="_images/29.jpg" />
+<p><code class="docutils literal notranslate"><span class="pre">Marker</span> <span class="pre">Emitters</span></code> allow you to emit marker names from any of your dropped mesh nodes.  This means, we can define a new marker node (e.g. <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code>) and then emit that marker from the wall node that doesn’t have a window (<code class="docutils literal notranslate"><span class="pre">Wall1</span></code> mesh).  All our wall decorations can now go under this <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code> marker and it will show up only near solid walls</p>
+<p>Right click on an empty area in the theme editor and select <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Marker</span> <span class="pre">Node</span></code></p>
+<img alt="_images/301.png" class="align-center" src="_images/301.png" />
+<p>Select the newly created marker node and change its name to <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code></p>
+<img alt="_images/311.png" class="align-center" src="_images/311.png" />
+<p>Break the link to the photo frame</p>
+<img alt="_images/321.png" class="align-center" src="_images/321.png" />
+<p>Connect this under <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code> marker node.  All the future wall decorations can also go under this marker</p>
+<img alt="_images/33.jpg" class="align-center" src="_images/33.jpg" />
+<p>Now emit this marker from the wall node that doesn’t contain a window</p>
+<p>Drag a link out of the bottom of the solid wall mesh node and release the mouse in an empty area</p>
+<img alt="_images/34.jpg" class="align-center" src="_images/34.jpg" />
+<p>Expand the category <code class="docutils literal notranslate"><span class="pre">Marker</span> <span class="pre">Emitter</span></code>  in the context menu and select <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code></p>
+<img alt="_images/35.jpg" class="align-center" src="_images/35.jpg" />
+<img alt="_images/36.jpg" class="align-center" src="_images/36.jpg" />
+<p>This will cause the marker named <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code> to be emitted in the scene whenever the solid wall node is selected, in which case it would then process the nodes defined under it.    Now our decorations don’t show up near windows</p>
+<img alt="_images/37.jpg" class="align-center" src="_images/37.jpg" />
+<p>You can follow the same method to create another type of decoration (e.g. MyWindowDeco) and emit it from under the windowed wall node. In this example, I’ve added a flower pot in the windows</p>
+<img alt="_images/38.jpg" class="align-center" src="_images/38.jpg" />
+<img alt="_images/39.jpg" class="align-center" src="_images/39.jpg" />
+</div>
+<div class="section" id="align-with-offset">
+<h3>Align with Offset<a class="headerlink" href="#align-with-offset" title="Permalink to this headline">¶</a></h3>
+<p>Dungeon Architect can adapt to any modular asset regardless of the mesh pivot position.  If the pivots are off, you can always adjust them from the Offset section of the node’s properties</p>
+<p>Sometimes, it is difficult to line up the ground node, as there is no point of reference to compare with.</p>
+<p>In that case, turn on Debug Draw and build the dungeon.</p>
+<img alt="_images/40.jpg" class="align-center" src="_images/40.jpg" />
+<p>This is a different ground mesh that has its pivot on the corner instead of the center.   We’ll add an offset of position <code class="docutils literal notranslate"><span class="pre">(-200,</span> <span class="pre">0,</span> <span class="pre">-200)</span></code> to fix it and align with the debug drawn boundaries</p>
+<img alt="_images/41.jpg" class="align-center" src="_images/41.jpg" />
+<p>It is important to first align the ground mesh and then use that as a reference to align your walls and fences.  If the ground is not aligned correctly, the rest will also not align (since you will be using an incorrect point of reference for aligning the rest)</p>
+</div>
+<div class="section" id="recap">
+<h3>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h3>
+<p>In this section we learnt the following:</p>
+<ul class="simple">
+<li><p><em>Probablity</em> - Controls the percentage chance of a node being selected.  A value of 1 means 100% selection chance. A value of 0.25 means 25% selection chance</p></li>
+<li><p><em>Execution Order</em> - The theme engine executes all the nodes under a marker node from left to right. If it selects a certain node, it stops executing, unless the <code class="docutils literal notranslate"><span class="pre">Consume</span> <span class="pre">on</span> <span class="pre">Attach</span></code> flag is unchecked</p></li>
+<li><p><em>Marker Emitters</em> - You can create complex hierarchies with your own marker nodes, giving you more freedom to decorate your dungeons</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="launch_pad.html" class="btn btn-neutral float-right" title="Launch Pad Window" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="create_first_dungeon.html" class="btn btn-neutral float-left" title="Create your first Dungeon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Code Respawn
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

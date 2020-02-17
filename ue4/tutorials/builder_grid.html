@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Grid Builder &mdash; Dungeon Architect [UE4]  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Theming" href="advanced_theming.html" />
+    <link rel="prev" title="Snap Flow Builder" href="builder_snap_flow.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Dungeon Architect [UE4]
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="create_first_dungeon.html">Create your first Dungeon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design_first_theme.html">Design your first theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch_pad.html">Launch Pad Window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_grid_flow.html">Grid Flow Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_snap_flow.html">Snap Flow Builder</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Grid Builder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#platform-volume">Platform Volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#theme-override-volume">Theme Override Volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#paint-mode">Paint Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_theming.html">Advanced Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_dungeon_concepts.html">Advanced Dungeons</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MORE BUILDERS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="builder_simple_city.html">Simple City Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_floor_plan.html">Floor Plan Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_isaac.html">Isaac Builder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Dungeon Architect [UE4]</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Grid Builder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="grid-builder">
+<h1>Grid Builder<a class="headerlink" href="#grid-builder" title="Permalink to this headline">¶</a></h1>
+<p>The <cite>Grid Builder</cite> generates a dungeon by scattering rooms across the map and connecting them with corridors.  The builder supports height variations (stairs)</p>
+<div class="figure align-center">
+<img alt="_images/021.jpg" src="_images/021.jpg" />
+</div>
+<p>We’ve used this dungeon builder in the previous section <a class="reference internal" href="create_first_dungeon.html"><span class="doc">Create your first Dungeon</span></a> and <a class="reference internal" href="design_first_theme.html"><span class="doc">Design your first theme</span></a></p>
+<p>In this section, we’ll explore more on this builder</p>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<p>Continuing on the scene created in the section <a class="reference internal" href="design_first_theme.html"><span class="doc">Design your first theme</span></a>, open the scene and select the <code class="docutils literal notranslate"><span class="pre">DungeonGrid</span></code> game object and inspect the properties</p>
+<div class="figure align-center">
+<img alt="_images/01.png" src="_images/01.png" />
+</div>
+<ul class="simple">
+<li><p>Change the <code class="docutils literal notranslate"><span class="pre">Seed</span></code> parameter to build a different dungeon layout</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">Grid</span> <span class="pre">Cell</span> <span class="pre">Size</span></code> parameter according to your moduler art asset. If the ground mesh is 4x4 and the stair mesh height is 2, set this to <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">2,</span> <span class="pre">4)</span></code></p></li>
+<li><p>The dungeon creation method first creates a number of cells (defined by <code class="docutils literal notranslate"><span class="pre">NumCells</span></code>) and spreads them across the scene.</p></li>
+<li><p>The size of these cells is define by the parameters <code class="docutils literal notranslate"><span class="pre">Min</span> <span class="pre">Cell</span> <span class="pre">Size</span></code> and <code class="docutils literal notranslate"><span class="pre">Max</span> <span class="pre">Cell</span> <span class="pre">Size</span></code></p></li>
+<li><p>Some of these cells will be promoted to Rooms and the rest will be promoted to Corridors.  If the cell area is large enough (parameter <code class="docutils literal notranslate"><span class="pre">Room</span> <span class="pre">Area</span> <span class="pre">Threshold</span></code>), that cell is promoted to a <cite>Room</cite>, otherwise a <cite>Corridor</cite></p></li>
+<li><p>The rooms are connected together with corridors</p></li>
+<li><p>Control how much height variation is allowed with <code class="docutils literal notranslate"><span class="pre">Height</span> <span class="pre">Variation</span> <span class="pre">Probability</span></code></p></li>
+<li><p>A new Stair will not be created between two tiles if there’s another stair nearby that if traversed, takes N steps to reach this cell. This value is controlled by <code class="docutils literal notranslate"><span class="pre">Stair</span> <span class="pre">Connection</span> <span class="pre">Tollerance</span></code>.  Bump this number up if you want fewer stairs</p></li>
+<li><p>Maximum allowed stair: Determine how high a stair tile can get.  If set to one, the builder will create stairs that go only one level up</p></li>
+<li><p>Both Rooms and Corridors have a <code class="docutils literal notranslate"><span class="pre">Ground</span></code> marker.   Rooms are surrounded by <code class="docutils literal notranslate"><span class="pre">Wall</span></code> markers while the corridors are surrounded by <code class="docutils literal notranslate"><span class="pre">Fence</span></code> marker</p></li>
+</ul>
+</div>
+<div class="section" id="platform-volume">
+<h2>Platform Volume<a class="headerlink" href="#platform-volume" title="Permalink to this headline">¶</a></h2>
+<p>Platform Volumes let you control the placement of the rooms or corridors.   You do this dropping in a platform volume on to the scene and resizing  / positioning it on the scene and you room will be built around it.</p>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">Asset/DungeonArchitect/Prefabs</span></code> and drag drop the <code class="docutils literal notranslate"><span class="pre">PlatformVolume</span></code> prefab on to the scene</p>
+<div class="figure align-center">
+<img alt="_images/03.png" src="_images/03.png" />
+</div>
+<p>Select the PlatformVolume game object and set the Dungeon reference</p>
+<div class="figure align-center">
+<img alt="_images/04.png" src="_images/04.png" />
+</div>
+<p>Click the button <code class="docutils literal notranslate"><span class="pre">Rebuild</span> <span class="pre">Dungeon</span></code></p>
+<div class="figure align-center">
+<img alt="_images/05.gif" src="_images/05.gif" />
+</div>
+<p>Move the <cite>Platform Volume</cite> and scale it to control the position and size of your room. You can have multiple platform volumes in the scene. Check the samples in the Launch Pad for more examples</p>
+</div>
+<div class="section" id="theme-override-volume">
+<h2>Theme Override Volume<a class="headerlink" href="#theme-override-volume" title="Permalink to this headline">¶</a></h2>
+<p>Theme Override Volumes let you apply another theme on certain portions of your dungeons that are covered by this volume.  These are useful for adding variations to your dungeons.</p>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">Asset/DungeonArchitect/Prefabs</span></code> and drag drop the <code class="docutils literal notranslate"><span class="pre">ThemeOverrideVolume</span></code> prefab on to the scene</p>
+<div class="figure align-center">
+<img alt="_images/06.png" src="_images/06.png" />
+</div>
+<p>Move and scale it to cover a certain portion of the dungeon</p>
+<div class="figure align-center">
+<img alt="_images/07.jpg" src="_images/07.jpg" />
+</div>
+<p>Select the theme override volume you just dropped and inspect the properties and assign the DungeonGrid reference</p>
+<div class="figure align-center">
+<img alt="_images/08.png" src="_images/08.png" />
+</div>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">Assets/DungeonArchitect_Samples/Demo_Theme_SimpleShapes/Themes</span></code> and assign the theme <code class="docutils literal notranslate"><span class="pre">Theme_Basic_White</span></code> to the Theme Override Volume</p>
+<div class="figure align-center">
+<img alt="_images/09.png" src="_images/09.png" />
+</div>
+<p>Click <code class="docutils literal notranslate"><span class="pre">Rebuild</span> <span class="pre">Dungeon</span></code></p>
+<div class="figure align-center">
+<img alt="_images/10.jpg" src="_images/10.jpg" />
+</div>
+</div>
+<div class="section" id="paint-mode">
+<h2>Paint Mode<a class="headerlink" href="#paint-mode" title="Permalink to this headline">¶</a></h2>
+<p>You can paint your own dungeon layout on top of the procedural dungeon</p>
+<p>Select the DungeonGrid prefab and expand it.   Select the <code class="docutils literal notranslate"><span class="pre">PaintMode</span></code> game object.  This will activate the <cite>Paint Mode</cite></p>
+<div class="figure align-center">
+<img alt="_images/11.png" src="_images/11.png" />
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Left</span> <span class="pre">click</span></code> and drag to draw dungeon cells.   <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Left</span> <span class="pre">click</span></code> to delete cells.   <code class="docutils literal notranslate"><span class="pre">Scroll</span> <span class="pre">wheel</span></code> to move the cursor up/down</p>
+<div class="figure align-center">
+<img alt="_images/12.gif" src="_images/12.gif" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="advanced_theming.html" class="btn btn-neutral float-right" title="Advanced Theming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="builder_snap_flow.html" class="btn btn-neutral float-left" title="Snap Flow Builder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Code Respawn
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

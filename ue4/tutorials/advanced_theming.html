@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Theming &mdash; Dungeon Architect [UE4]  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Dungeons" href="advanced_dungeon_concepts.html" />
+    <link rel="prev" title="Grid Builder" href="builder_grid.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Dungeon Architect [UE4]
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="create_first_dungeon.html">Create your first Dungeon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design_first_theme.html">Design your first theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch_pad.html">Launch Pad Window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_grid_flow.html">Grid Flow Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_snap_flow.html">Snap Flow Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_grid.html">Grid Builder</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Theming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#selection-rules">Selection Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-1">Example #1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2">Example #2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#transform-rules">Transform Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_dungeon_concepts.html">Advanced Dungeons</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MORE BUILDERS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="builder_simple_city.html">Simple City Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_floor_plan.html">Floor Plan Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="builder_isaac.html">Isaac Builder</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Dungeon Architect [UE4]</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Advanced Theming</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-theming">
+<h1>Advanced Theming<a class="headerlink" href="#advanced-theming" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center">
+<img alt="_images/wip.png" src="_images/wip.png" />
+</div>
+<div class="section" id="selection-rules">
+<h2>Selection Rules<a class="headerlink" href="#selection-rules" title="Permalink to this headline">¶</a></h2>
+<p>One way to select the node in a theme graph is by setting the probablity.  If you want more control, you can write you own selection logic in a script</p>
+<div class="section" id="example-1">
+<h3>Example #1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
+<p>Different tiles for rooms and corridors</p>
+</div>
+<div class="section" id="example-2">
+<h3>Example #2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+<p>In this example the towers are too crowded and close to each other.</p>
+<div class="figure align-center">
+<img alt="_images/01.jpg" src="_images/01.jpg" />
+</div>
+<p>A selector rule is created to select alternate cells</p>
+<div class="figure align-center">
+<img alt="_images/02.jpg" src="_images/02.jpg" />
+</div>
+<div class="figure align-center">
+<img alt="_images/03.jpg" src="_images/03.jpg" />
+</div>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">DungeonArchitect</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AlternateSelectionRule</span> <span class="p">:</span> <span class="n">SelectorRule</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">override</span> <span class="kt">bool</span> <span class="nf">CanSelect</span><span class="p">(</span><span class="n">PropSocket</span> <span class="n">socket</span><span class="p">,</span> <span class="n">Matrix4x4</span> <span class="n">propTransform</span><span class="p">,</span> <span class="n">DungeonModel</span> <span class="n">model</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Random</span> <span class="n">random</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">gridPosition</span><span class="p">.</span><span class="n">x</span> <span class="p">+</span> <span class="n">socket</span><span class="p">.</span><span class="n">gridPosition</span><span class="p">.</span><span class="n">z</span><span class="p">)</span> <span class="p">%</span> <span class="m">2</span> <span class="p">==</span> <span class="m">0</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="transform-rules">
+<h2>Transform Rules<a class="headerlink" href="#transform-rules" title="Permalink to this headline">¶</a></h2>
+<p>A transform rule lets you apply an offset using a script. These are great for randomization or handling any special case of object alignment through script</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="advanced_dungeon_concepts.html" class="btn btn-neutral float-right" title="Advanced Dungeons" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="builder_grid.html" class="btn btn-neutral float-left" title="Grid Builder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Code Respawn
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
