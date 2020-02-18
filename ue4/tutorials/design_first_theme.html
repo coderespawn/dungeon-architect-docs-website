@@ -85,18 +85,15 @@
 <li class="toctree-l1"><a class="reference internal" href="create_first_dungeon.html">Create your first Dungeon</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Design your first theme</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#create-a-theme-file">Create a Theme File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#design-the-theme">Design the Theme</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#use-sample-assets">Use Sample Assets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-ground">Add Ground</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-more-meshes">Add More Meshes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-wall-pillars">Add Wall Pillars</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-windows">Add Windows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#add-wall-decorations">Add Wall Decorations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#marker-emitters">Marker Emitters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#align-with-offset">Align with Offset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#recap">Recap</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#use-sample-assets">Use Sample Assets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-ground-mesh">Add Ground Mesh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-more-meshes">Add More Meshes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-wall-pillars">Add Wall Pillars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-windows">Add Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-wall-decorations">Add Wall Decorations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#marker-emitters">Marker Emitters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#align-with-offset">Align with Offset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recap">Recap</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="launch_pad.html">Launch Pad Window</a></li>
@@ -187,10 +184,8 @@
 <img alt="_images/03A.png" class="align-center" src="_images/03A.png" />
 <img alt="_images/04.jpg" class="align-center" src="_images/04.jpg" />
 </div>
-<div class="section" id="design-the-theme">
-<h2>Design the Theme<a class="headerlink" href="#design-the-theme" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="use-sample-assets">
-<h3>Use Sample Assets<a class="headerlink" href="#use-sample-assets" title="Permalink to this headline">¶</a></h3>
+<h2>Use Sample Assets<a class="headerlink" href="#use-sample-assets" title="Permalink to this headline">¶</a></h2>
 <p>In the <cite>Content Browser</cite>, enable plugin contents so we can use sample meshes that come with the plugin to design our theme</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -202,8 +197,8 @@
 <p>Navigate to <code class="docutils literal notranslate"><span class="pre">Dungeon</span> <span class="pre">Architect</span> <span class="pre">Content</span> <span class="pre">&gt;</span> <span class="pre">Samples</span> <span class="pre">&gt;</span> <span class="pre">DA_Candy</span> <span class="pre">&gt;</span> <span class="pre">Meshes</span></code>.  This folder contains a set of meshes we can use for our dungeon</p>
 <img alt="_images/071.jpg" class="align-center" src="_images/071.jpg" />
 </div>
-<div class="section" id="add-ground">
-<h3>Add Ground<a class="headerlink" href="#add-ground" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="add-ground-mesh">
+<h2>Add Ground Mesh<a class="headerlink" href="#add-ground-mesh" title="Permalink to this headline">¶</a></h2>
 <p>Drag-drop the ground mesh on to the Theme Editor</p>
 <img alt="_images/081.jpg" class="align-center" src="_images/081.jpg" />
 <p>Link up the mesh node with the <code class="docutils literal notranslate"><span class="pre">Ground</span></code> marker node.  When you do, you should see a live preview on theme editor’s Preview Viewport window</p>
@@ -211,13 +206,13 @@
 <img alt="_images/104.jpg" class="align-center" src="_images/104.jpg" />
 </div>
 <div class="section" id="add-more-meshes">
-<h3>Add More Meshes<a class="headerlink" href="#add-more-meshes" title="Permalink to this headline">¶</a></h3>
+<h2>Add More Meshes<a class="headerlink" href="#add-more-meshes" title="Permalink to this headline">¶</a></h2>
 <p>Go ahead and add more meshes under the following markers: <strong>Wall</strong>, <strong>Fence</strong> and <strong>Door</strong></p>
 <img alt="_images/11.jpg" class="align-center" src="_images/11.jpg" />
 <img alt="_images/12.jpg" class="align-center" src="_images/12.jpg" />
 </div>
 <div class="section" id="add-wall-pillars">
-<h3>Add Wall Pillars<a class="headerlink" href="#add-wall-pillars" title="Permalink to this headline">¶</a></h3>
+<h2>Add Wall Pillars<a class="headerlink" href="#add-wall-pillars" title="Permalink to this headline">¶</a></h2>
 <p>Drag drop the <code class="docutils literal notranslate"><span class="pre">Pillar2</span></code> mesh to the theme editor and link it to the <code class="docutils literal notranslate"><span class="pre">WallSeparator</span></code> marker node</p>
 <img alt="_images/13.jpg" class="align-center" src="_images/13.jpg" />
 <img alt="_images/141.jpg" class="align-center" src="_images/141.jpg" />
@@ -227,7 +222,7 @@
 <img alt="_images/161.jpg" class="align-center" src="_images/161.jpg" />
 </div>
 <div class="section" id="add-windows">
-<h3>Add Windows<a class="headerlink" href="#add-windows" title="Permalink to this headline">¶</a></h3>
+<h2>Add Windows<a class="headerlink" href="#add-windows" title="Permalink to this headline">¶</a></h2>
 <p>We have two wall meshes in the samples folder</p>
 <img alt="_images/17.jpg" class="align-center" src="_images/17.jpg" />
 <p>The other one (<code class="docutils literal notranslate"><span class="pre">Wall2</span></code>) has a window. Lets configure the theme to sometimes use this second mesh, so we can have some windows</p>
@@ -247,7 +242,7 @@
 </div>
 </div>
 <div class="section" id="add-wall-decorations">
-<h3>Add Wall Decorations<a class="headerlink" href="#add-wall-decorations" title="Permalink to this headline">¶</a></h3>
+<h2>Add Wall Decorations<a class="headerlink" href="#add-wall-decorations" title="Permalink to this headline">¶</a></h2>
 <p>There’s a photo frame mesh we’d like to attach to every wall.  Drag drop this mesh to the theme editor <strong>before</strong> the two existing wall nodes and link it to the <code class="docutils literal notranslate"><span class="pre">Wall</span></code> marker node</p>
 <img alt="_images/23.jpg" class="align-center" src="_images/23.jpg" />
 <p>This will cause all the walls to disappear and be replaced with this photo frame</p>
@@ -263,7 +258,7 @@
 <img alt="_images/281.jpg" class="align-center" src="_images/281.jpg" />
 </div>
 <div class="section" id="marker-emitters">
-<h3>Marker Emitters<a class="headerlink" href="#marker-emitters" title="Permalink to this headline">¶</a></h3>
+<h2>Marker Emitters<a class="headerlink" href="#marker-emitters" title="Permalink to this headline">¶</a></h2>
 <p>We have an issue with the photo frames. They also spawn near windows</p>
 <img alt="_images/29.jpg" class="align-center" src="_images/29.jpg" />
 <p><code class="docutils literal notranslate"><span class="pre">Marker</span> <span class="pre">Emitters</span></code> allow you to emit marker names from any of your dropped mesh nodes.  This means, we can define a new marker node (e.g. <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code>) and then emit that marker from the wall node that doesn’t have a window (<code class="docutils literal notranslate"><span class="pre">Wall1</span></code> mesh).  All our wall decorations can now go under this <code class="docutils literal notranslate"><span class="pre">MyWallDeco</span></code> marker and it will show up only near solid walls</p>
@@ -288,7 +283,7 @@
 <img alt="_images/39.jpg" class="align-center" src="_images/39.jpg" />
 </div>
 <div class="section" id="align-with-offset">
-<h3>Align with Offset<a class="headerlink" href="#align-with-offset" title="Permalink to this headline">¶</a></h3>
+<h2>Align with Offset<a class="headerlink" href="#align-with-offset" title="Permalink to this headline">¶</a></h2>
 <p>Dungeon Architect can adapt to any modular asset regardless of the mesh pivot position.  If the pivots are off, you can always adjust them from the Offset section of the node’s properties</p>
 <p>Sometimes, it is difficult to line up the ground node, as there is no point of reference to compare with.</p>
 <p>In that case, turn on Debug Draw and build the dungeon.</p>
@@ -298,14 +293,13 @@
 <p>It is important to first align the ground mesh and then use that as a reference to align your walls and fences.  If the ground is not aligned correctly, the rest will also not align (since you will be using an incorrect point of reference for aligning the rest)</p>
 </div>
 <div class="section" id="recap">
-<h3>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h3>
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
 <p>In this section we learnt the following:</p>
 <ul class="simple">
 <li><p><em>Probablity</em> - Controls the percentage chance of a node being selected.  A value of 1 means 100% selection chance. A value of 0.25 means 25% selection chance</p></li>
 <li><p><em>Execution Order</em> - The theme engine executes all the nodes under a marker node from left to right. If it selects a certain node, it stops executing, unless the <code class="docutils literal notranslate"><span class="pre">Consume</span> <span class="pre">on</span> <span class="pre">Attach</span></code> flag is unchecked</p></li>
 <li><p><em>Marker Emitters</em> - You can create complex hierarchies with your own marker nodes, giving you more freedom to decorate your dungeons</p></li>
 </ul>
-</div>
 </div>
 </div>
 
