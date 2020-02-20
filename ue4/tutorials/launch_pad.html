@@ -87,8 +87,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Launch Pad Window</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#open-launch-pad">Open Launch Pad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#navigation">Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#samples">Samples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clone-scene">Clone Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-dependency">Install Dependency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#watch-video">Watch Video</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#builder-templates">Builder Templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#samples">Samples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#flow-graph-templates">Flow Graph Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#theme-templates">Theme Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
@@ -175,6 +180,10 @@
 <div class="section" id="open-launch-pad">
 <h2>Open Launch Pad<a class="headerlink" href="#open-launch-pad" title="Permalink to this headline">¶</a></h2>
 <p>Click the <code class="docutils literal notranslate"><span class="pre">DA</span></code> button from the main toolbar. This will open the <cite>Launch Pad</cite> window</p>
+<div class="figure align-center" id="id1">
+<img alt="_images/012.png" src="_images/012.png" />
+<p class="caption"><span class="caption-text">Tool button to open Lauch Pad window</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <p>With the Launch Pad, you can do the following:</p>
 <ul class="simple">
 <li><p>Browse the various samples scenes</p></li>
@@ -183,10 +192,6 @@
 <li><p>Clone Theme files from existing templates</p></li>
 <li><p>Access the various documentation and support channels</p></li>
 </ul>
-<div class="figure align-center" id="id1">
-<img alt="_images/012.png" src="_images/012.png" />
-<p class="caption"><span class="caption-text">Tool button to open Lauch Pad window</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
 <div class="figure align-center" id="id2">
 <img alt="_images/022.jpg" src="_images/022.jpg" />
 <p class="caption"><span class="caption-text">Lauch Pad window</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -202,96 +207,74 @@
 <p class="caption"><span class="caption-text">Navigation bar</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="builder-templates">
-<h2>Builder Templates<a class="headerlink" href="#builder-templates" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center" id="id4">
-<img alt="_images/025.jpg" src="_images/025.jpg" />
-<p class="caption"><span class="caption-text">Dungeon Architect - List of Builders</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
-<p>Dungeon Architect supports many different types of dungeon layout methods and is designed in a way that new layout methods can be easily added in the future</p>
-<p>These layout methods are called <cite>Dungeon Builders</cite> or <strong>Builders</strong> in short</p>
-<p>This section lets you create a new scene preconfigured with one of the builder templates.  Click on any of the builders. In the next screen, click the <code class="docutils literal notranslate"><span class="pre">Clone</span> <span class="pre">Scene</span></code> button</p>
-<div class="figure align-center">
-<img alt="_images/06.jpg" src="_images/06.jpg" />
-</div>
-<p>This will create a new scene based on the template, fully configured with the appropriate dungeon.  It will also clone a starting theme file (and any other flow graph assets) and set everything up.</p>
-<p>Choose a folder to saved your scene file.  Once saved, the launcher would do the following:</p>
-<ul class="simple">
-<li><p>Open the new scene</p></li>
-<li><p>Open any theme editor windows associated with the referenced assets (Theme Editor, Flow Graph Editors etc)</p></li>
-<li><p>Select the dungeon game object (so you see the properties in the inspector by default)</p></li>
-</ul>
-</div>
 <div class="section" id="samples">
 <h2>Samples<a class="headerlink" href="#samples" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center">
+<p>Browse the various samples that come bundled with Dungeon Architect</p>
+<img alt="_images/022.jpg" class="align-center" src="_images/022.jpg" />
+<p>There are tons of samples to explore.  Select a sample for more details</p>
+<img alt="_images/05.jpg" class="align-center" src="_images/05.jpg" />
+<p>You can perform various actions on each sample</p>
+<div class="section" id="clone-scene">
+<h3>Clone Scene<a class="headerlink" href="#clone-scene" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/06A.png" class="align-center" src="_images/06A.png" />
+<p>Clone this scene and all the relevant assets (referenced themes, flow graphs etc) into the selected directory.   This lets you freely explore and modify the cloned sample map</p>
+</div>
+<div class="section" id="install-dependency">
+<h3>Install Dependency<a class="headerlink" href="#install-dependency" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/06C.png" class="align-center" src="_images/06C.png" />
+<p>Some samples require an external asset from the marketplace (usually free ones like infinity blade assets). This button takes you there so you can install them in your project</p>
+</div>
+<div class="section" id="watch-video">
+<h3>Watch Video<a class="headerlink" href="#watch-video" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/06B.png" class="align-center" src="_images/06B.png" />
+<p>Watch a video, if it exists</p>
+</div>
+</div>
+<div class="section" id="builder-templates">
+<h2>Builder Templates<a class="headerlink" href="#builder-templates" title="Permalink to this headline">¶</a></h2>
+<p>Dungeon Architect supports many different types of dungeon layout methods and is designed in a way that new layout methods can be easily added in the future</p>
+<p>These layout methods are called <cite>Dungeon Builders</cite> or <strong>Builders</strong> in short</p>
+<div class="figure align-center" id="id4">
 <img alt="_images/072.jpg" src="_images/072.jpg" />
+<p class="caption"><span class="caption-text">Dungeon Architect - List of Builders</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>There are tons of samples to explore.  Select a sample you like and perform one of the following actions</p>
-<ul class="simple">
-<li><p><strong>Open Scene</strong>: Opens the sample scene (usually under DungeonArchitect_Samples folder)</p></li>
-<li><p><strong>Open Folder</strong>: Opens the folder containing the scene</p></li>
-<li><p><strong>Clone Scene</strong>: Clone a scene and also clone over the referenced assets (themes, flow graphs etc) so you can modify them without affecting the sample scene</p></li>
-<li><p><strong>Watch Demo</strong>: Watch a video, if it exists</p></li>
-</ul>
-<div class="figure align-center">
-<img alt="_images/082.jpg" src="_images/082.jpg" />
-</div>
+<p>This section lets you create a new scene preconfigured with one of the builder templates.  Click on any of the builders to see more info.</p>
+<img alt="_images/082.jpg" class="align-center" src="_images/082.jpg" />
+<p>Click the <code class="docutils literal notranslate"><span class="pre">Clone</span> <span class="pre">Scene</span></code> button to create a new scene preconfigured with this dungeon builder and sample themes to go with it (and any other flow graph assets if needed)</p>
 </div>
 <div class="section" id="flow-graph-templates">
 <h2>Flow Graph Templates<a class="headerlink" href="#flow-graph-templates" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center">
-<img alt="_images/092.jpg" src="_images/092.jpg" />
-</div>
 <p>Flow graphs allow you to control the flow of your dungeon (more on this in the later tutorial sections).   This section contains a list of flow graph templates you can use as a starting point for your project</p>
-<div class="figure align-center" id="id5">
-<img alt="_images/105.jpg" src="_images/105.jpg" />
-<p class="caption"><span class="caption-text">Clone Grid Flow Graphs</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-center" id="id6">
-<img alt="_images/111.jpg" src="_images/111.jpg" />
-<p class="caption"><span class="caption-text">Clone Snap Flow Graphs</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</div>
+<img alt="_images/092.jpg" class="align-center" src="_images/092.jpg" />
+<img alt="_images/102.png" class="align-center" src="_images/102.png" />
+<p>Clone the flow graph asset to use as your starting point</p>
 </div>
 <div class="section" id="theme-templates">
 <h2>Theme Templates<a class="headerlink" href="#theme-templates" title="Permalink to this headline">¶</a></h2>
 <p>Clone one of the many themes and use it in your project or as a starting point for a new theme</p>
-<div class="figure align-center" id="id7">
-<img alt="_images/121.jpg" src="_images/121.jpg" />
-<p class="caption"><span class="caption-text">Theme template browser</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<div class="figure align-center" id="id5">
+<img alt="_images/111.jpg" src="_images/111.jpg" />
+<p class="caption"><span class="caption-text">Theme template browser</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Select a theme and clone it</p>
 <div class="figure align-center">
-<img alt="_images/131.jpg" src="_images/131.jpg" />
+<img alt="_images/121.jpg" src="_images/121.jpg" />
 </div>
-<p>There’s also a category on <cite>External Themes</cite>, the ones that use external paid art assets from the Asset Store.  You can use these themes if you also own the art asset.</p>
-<div class="figure align-center">
-<img alt="_images/142.jpg" src="_images/142.jpg" />
-</div>
-<div class="figure align-center">
-<img alt="_images/151.jpg" src="_images/151.jpg" />
-</div>
+<img alt="_images/131.png" class="align-center" src="_images/131.png" />
 </div>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <p>Links to various online documentation, including this one</p>
-<div class="figure align-center">
-<img alt="_images/16.png" src="_images/16.png" />
-</div>
+<img alt="_images/14.png" class="align-center" src="_images/14.png" />
 </div>
 <div class="section" id="support">
 <h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
 <p>Reach the developers through any one of these channels. Interact with the community and the devs in Discord chat and forums or reach directly through email</p>
-<div class="figure align-center">
-<img alt="_images/171.png" src="_images/171.png" />
-</div>
+<img alt="_images/151.png" class="align-center" src="_images/151.png" />
 </div>
 <div class="section" id="news">
 <h2>News<a class="headerlink" href="#news" title="Permalink to this headline">¶</a></h2>
 <p>Dungeon Architect News!  Find out whats new since the last update</p>
-<div class="figure align-center">
-<img alt="_images/18.jpg" src="_images/18.jpg" />
-</div>
 </div>
 </div>
 
