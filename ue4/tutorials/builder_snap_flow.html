@@ -87,12 +87,16 @@
 <li class="toctree-l1"><a class="reference internal" href="launch_pad.html">Launch Pad Window</a></li>
 <li class="toctree-l1"><a class="reference internal" href="builder_grid_flow.html">Grid Flow Builder</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Snap Flow Builder</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#preparing-the-scene">Preparing the Scene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-module-prefabs">Creating Module Prefabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prepare-the-dungeon-actor">Prepare the dungeon actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-module-database">Create a Module Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-module-level-file">Creating Module Level File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#designing-your-modules">Designing your Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#connections">Connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#register-the-modules">Register the Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dungeon-flow">Dungeon Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#generating-the-dungeon">Generating the Dungeon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#level-streaming">Level Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-game">Sample Game</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="builder_grid.html">Grid Builder</a></li>
@@ -168,173 +172,163 @@
             
   <div class="section" id="snap-flow-builder">
 <h1>Snap Flow Builder<a class="headerlink" href="#snap-flow-builder" title="Permalink to this headline">¶</a></h1>
-<p>The Snap Builder generates a dungeon by stitching together pre-built rooms prefabs.   The rules for stitching them is controlled by Graph Grammars</p>
+<p>The Snap Builder generates a dungeon by stitching together pre-built rooms. These rooms are designed in individual level maps.   The rules for stitching them is controlled by Graph Grammars</p>
 <p>In this page, we’ll walk through the creation process.</p>
-<div class="section" id="preparing-the-scene">
-<h2>Preparing the Scene<a class="headerlink" href="#preparing-the-scene" title="Permalink to this headline">¶</a></h2>
-<p>Create a new scene and drop in a Dungeon Snap game object.  This will allow you to build snap dungeons</p>
-<div class="figure align-center">
-<img alt="_images/prepare_scene_01.png" src="_images/prepare_scene_01.png" />
+<div class="section" id="prepare-the-dungeon-actor">
+<h2>Prepare the dungeon actor<a class="headerlink" href="#prepare-the-dungeon-actor" title="Permalink to this headline">¶</a></h2>
+<p>Create a new scene and drop in a Dungeon Actor</p>
+<img alt="_images/drop_da.png" class="align-center" src="_images/drop_da.png" />
+<p>Select the Snap Map builder</p>
+<img alt="_images/select_dungeon_builder.png" class="align-center" src="_images/select_dungeon_builder.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure it is SnapMap and not Snap builder</p>
 </div>
+<p>We’ll need to fill this later on</p>
+<img alt="_images/module_flow_assets_missing.png" class="align-center" src="_images/module_flow_assets_missing.png" />
 </div>
-<div class="section" id="creating-module-prefabs">
-<h2>Creating Module Prefabs<a class="headerlink" href="#creating-module-prefabs" title="Permalink to this headline">¶</a></h2>
-<p>A module is a prebuilt prefab of a area (like room, corridor etc)</p>
-<p>Design a room in the editor so we can turn it into a prefab for use with the snap builder</p>
-<div class="figure align-center">
-<img alt="_images/build_module_01.jpg" src="_images/build_module_01.jpg" />
+<div class="section" id="create-a-module-database">
+<h2>Create a Module Database<a class="headerlink" href="#create-a-module-database" title="Permalink to this headline">¶</a></h2>
+<p>Create a new module database in the Content Browser</p>
+<img alt="_images/create_module_database.png" class="align-center" src="_images/create_module_database.png" />
+<p>Double click to open it.  This is the editor for the module database. Here is where we’ll register our module level files when we create them.</p>
+<img alt="_images/module_database_editor.png" class="align-center" src="_images/module_database_editor.png" />
+<p>Close this editor window</p>
 </div>
-<p>We’ve left holes at places where we want a possible door.   We’ll place a special Connection prefab later at these places to let Dungeon Architect know that it can stitch the rooms from these points</p>
-<p>Go ahead and create a few more module prefabs. We’ve created one for a corridor below</p>
-<div class="figure align-center">
-<img alt="_images/build_module_02.jpg" src="_images/build_module_02.jpg" />
+<div class="section" id="creating-module-level-file">
+<h2>Creating Module Level File<a class="headerlink" href="#creating-module-level-file" title="Permalink to this headline">¶</a></h2>
+<p>A module is a pre-designed room. You design a module in separate level files and you specify connection points (usually doors) that should be used for stitching the doors together.</p>
+<p>Right click on the content browser and create a new level file (Right click so the new level file is empty as we don’t want the skybox, lights etc)</p>
+<img alt="_images/create_module_asset.png" class="align-center" src="_images/create_module_asset.png" />
+<p>These level files are empty and don’t have any lights.  It order to make it easier to design our rooms in these levels,  We’ll create a new level (temporary) and edit our module level files from there</p>
+<p>Create a new level from <em>File &gt; New Level</em> and choose the default one</p>
+<img alt="_images/open_levels_window_0.png" class="align-center" src="_images/open_levels_window_0.png" />
+<p>Open Levels window</p>
+<img alt="_images/open_levels_window.png" class="align-center" src="_images/open_levels_window.png" />
+<p>In the Levels window, drag drop our module level and double click on it to make sure it is the currently selected level.  If the level is currently selected, all dropped actors will be placed on it</p>
+<img alt="_images/levels_window_drag_drop.png" class="align-center" src="_images/levels_window_drag_drop.png" />
 </div>
+<div class="section" id="designing-your-modules">
+<h2>Designing your Modules<a class="headerlink" href="#designing-your-modules" title="Permalink to this headline">¶</a></h2>
+<p>Drag drop and design your module.  Dungeon Architect comes with a rapid prototyping toolset that makes it easy to quickly build your rooms.  We will use this in the sample, however feel free to use your own assets</p>
+<img alt="_images/proto_mesh1.png" class="align-center" src="_images/proto_mesh1.png" />
+<img alt="_images/proto_mesh2.png" class="align-center" src="_images/proto_mesh2.png" />
+<p>Make sure the scale and movement is snapped to something like 1 and 100 respectively.  This makes the adjustment easier</p>
+<img alt="_images/proto_mesh3.png" class="align-center" src="_images/proto_mesh3.png" />
+<p>Complete the design of your room.   We’ve left holes where there could be a possible entry / exit.  Here, we will place a connection actor to let Dungeon Architect know that it can stitch other modules from this location.</p>
+<img alt="_images/proto_mesh4.png" class="align-center" src="_images/proto_mesh4.png" />
+<p>Make sure all your meshes are inside the module level and not the temporary level we created. Do this by clicking the eye icon on the Levels window and make sure everything dissapears if we hide the module level</p>
+<img alt="_images/proto_mesh5.png" class="align-center" src="_images/proto_mesh5.png" />
+<p>Go ahead and design another module for our corridor.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you are editing the correct level file by double clicking on the level name in the Levels window (it should turn bold)</p>
+</div>
+<img alt="_images/proto_mesh9.png" class="align-center" src="_images/proto_mesh9.png" />
+<img alt="_images/proto_mesh6.png" class="align-center" src="_images/proto_mesh6.png" />
 </div>
 <div class="section" id="connections">
 <h2>Connections<a class="headerlink" href="#connections" title="Permalink to this headline">¶</a></h2>
-<p>A Snap Connection tells DA how to stitch the room modules together.  They are usually the Door Entry / Exits.</p>
-<p>The connection also contains references to two assets, a references to a Door prefab and a reference to a Wall prefab.</p>
-<p>If DA stitches another module through that connection point, it would place the specified Door prefab in that place. Otherwise it would fill up the gap with the specified Wall prefab</p>
-<p>Design a new Connection prefab by creating an emtpy Game Object</p>
-<div class="figure align-center">
-<img alt="_images/connection_01.png" src="_images/connection_01.png" />
-</div>
-<p>Reset the transform of the newly created emtpy Game Object and rename it</p>
-<div class="figure align-center">
-<img alt="_images/connection_02.png" src="_images/connection_02.png" />
-</div>
-<p>Add a SnapConnection script to it</p>
-<div class="figure align-center">
-<img alt="_images/connection_03.png" src="_images/connection_03.png" />
-</div>
-<p>This script takes references to the above two mentioned prefab references, one for door and another for wall</p>
-<p>Drop your Door and Wall prefabs under the Connection prefab</p>
-<div class="figure align-center">
-<img alt="_images/connection_04.png" src="_images/connection_04.png" />
-</div>
-<p>Align the door and wall prefabs so the Red line is perpendicular to it</p>
-<div class="figure align-center">
-<img alt="_images/connection_05.png" src="_images/connection_05.png" />
-</div>
-<p>Now set these child door / wall prefab references on the SnapConnection script</p>
-<div class="figure align-center">
-<img alt="_images/connection_06.png" src="_images/connection_06.png" />
-</div>
-<p>Your connection is ready.  Turn this into a prefab so we can reuse this in our modules</p>
-<div class="figure align-center">
-<img alt="_images/connection_08.png" src="_images/connection_08.png" />
-</div>
-<p>Drag and drop the connection prefab on your previously generated modules. Make sure the red line points outwards from the opening</p>
-<div class="figure align-center">
-<img alt="_images/connection_09.jpg" src="_images/connection_09.jpg" />
-</div>
-<p>Make sure the red line is pointing outwards and is on the edge of the module bounds</p>
-<div class="figure align-center">
-<img alt="_images/connection_10.jpg" src="_images/connection_10.jpg" />
-</div>
+<p>A Snap Connection tells DA how to stitch the room modules together.  They are usually the Door Entry / Exits.   First create a Connection asset and specify the art asset to use for doors and walls.</p>
+<p>If DA stitches another module through that connection point, it would place the specified Door mesh (or blueprint). Otherwise it would fill up the gap with the specified Wall mesh (or blueprint)</p>
+<p>Right click on the content browser and create a connection asset</p>
+<img alt="_images/connection_1.png" class="align-center" src="_images/connection_1.png" />
+<p>Double click and open up the editor.  Here you specify the mesh or blueprint to use for the Door and Wall.</p>
+<p>Your wall mesh thickness should be the same as the wall thickness you used while designing the module.  (we used a thickness of 100 in the above sample)</p>
+<p>Specify the proto cube mesh for the walls</p>
+<img alt="_images/connection_2.png" class="align-center" src="_images/connection_2.png" />
+<img alt="_images/connection_3.png" class="align-center" src="_images/connection_3.png" />
+<p>Adjust the size so it is 400x100x400. Always make sure the red arrow points outwards and the wall mesh is behind it (because that is how we are going to align our connection actor later on)</p>
+<img alt="_images/connection_4.png" class="align-center" src="_images/connection_4.png" />
+<p>We can specify the door blueprint as well but we’ll leave it empty in this example. When designing your door meshes, make sure the thickness is twice the thickness of the walls (since we account for the adjacent room as well and the thickness is aligned such that it is in the middle of the red arrow)</p>
+<p>Close the connection editor window</p>
+<p>Drag and drop the connection asset on the door opening</p>
+<img alt="_images/connection_5.png" class="align-center" src="_images/connection_5.png" />
+<p>Make sure the alignment arrow is pointing outwards and is on the edge of the screen</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is a good practice to design with the snap settings (Edit &gt; Snap Settings &gt; Snap All Axis)</p>
+<p>It is a good practice to design with the snap settings in the editor enabled</p>
 </div>
+<img alt="_images/proto_mesh3.png" class="align-center" src="_images/proto_mesh3.png" />
+<img alt="_images/connection_6.png" class="align-center" src="_images/connection_6.png" />
 <p>Repeat by drag-dropping on all the door openings.   Do this for all the other modules as well (like the corridor module)</p>
-<div class="figure align-center">
-<img alt="_images/connection_11.jpg" src="_images/connection_11.jpg" />
-</div>
-<div class="figure align-center">
-<img alt="_images/connection_12.jpg" src="_images/connection_12.jpg" />
-</div>
-<p>Save/Update your module prefab</p>
+<img alt="_images/connection_7.png" class="align-center" src="_images/connection_7.png" />
 </div>
 <div class="section" id="register-the-modules">
 <h2>Register the Modules<a class="headerlink" href="#register-the-modules" title="Permalink to this headline">¶</a></h2>
-<p>Register your modules in the DungeonSnap game object so Dungeon Architect can use it to build the dungeon</p>
-<p>Inspect the DungeonSnap Game Object</p>
-<div class="figure align-center">
-<img alt="_images/register_mod_01.png" src="_images/register_mod_01.png" />
-</div>
-<p>Here we’ve registered the two modules and assigned a Category to them (e.g. Room, Corridor, TreasureRoom, MiniBoss, MainBoss, SpawnRoom, Exit etc).</p>
-<p>You can have multiple module prefabs assigned to the same category.    These categories are used in the Dungeon Flow graph to design a procedural layout graph for your dungeon</p>
+<p>It’s time to register our modules in the Module Database.</p>
+<p>Open the module database editor</p>
+<img alt="_images/module_db_asset.png" class="align-center" src="_images/module_db_asset.png" />
+<img alt="_images/register_module_db_1.png" class="align-center" src="_images/register_module_db_1.png" />
+<p>Click the <strong>Build Module Cache</strong> button after you’ve modified the module database.  This is an optimization step so your dungeons build fast at runtime. You’ll get a warning on screen DA if detects that they are out of date</p>
+<img alt="_images/register_module_db_2.png" class="align-center" src="_images/register_module_db_2.png" />
+<p>{% include important.html content=”Do not forget the above step. It is important” %}</p>
 </div>
 <div class="section" id="dungeon-flow">
 <h2>Dungeon Flow<a class="headerlink" href="#dungeon-flow" title="Permalink to this headline">¶</a></h2>
 <p>A Dungeon Flow graph allows you to control the layout of your dungeons using Graph Grammars.   You can generate interesting graphs with simple rules</p>
-<p>Create a new Dungeon Flow Asset by right clicking on the Projects window. (This can also be done from the Create menu in the Projects window or Assets &gt; Create from the editor’s main menu)</p>
-<div class="figure align-center">
-<img alt="_images/flow_01.png" src="_images/flow_01.png" />
-</div>
-<div class="figure align-center">
-<img alt="_images/flow_02.png" src="_images/flow_02.png" />
-</div>
-<p>Double click the asset to open the Dungeon Flow Editor. Doc this window in a large area</p>
-<div class="figure align-center">
-<img alt="_images/flow_03.png" src="_images/flow_03.png" />
-</div>
-<p>Add two new nodes <strong>Room</strong> and <strong>Corridor</strong>.  You can change the name of the nodes from the inspector window</p>
-<p>These names map to the names you specified on the Module registration in the DungeonSnap game object</p>
-<div class="figure align-center">
-<img alt="_images/flow_04.png" src="_images/flow_04.png" />
-</div>
-<p>Select the <em>Start Rule</em> and on the RHS, delete the default T node and drop in a few Room nodes like this:</p>
-<div class="figure align-center">
-<img alt="_images/flow_05.png" src="_images/flow_05.png" />
-</div>
-<div class="figure align-center">
-<img alt="_images/flow_06.png" src="_images/flow_06.png" />
-</div>
+<p>Create a new Dungeon Flow Asset</p>
+<img alt="_images/flow_1.png" class="align-center" src="_images/flow_1.png" />
+<p>Add two new nodes <strong>Room</strong> and <strong>Corridor</strong>.  You can change the name of the nodes from the details panel.</p>
+<p>These names map to the names you specified on the Module database (Room and Corridor)</p>
+<img alt="_images/flow_2.png" class="align-center" src="_images/flow_2.png" />
+<img alt="_images/flow_3.png" class="align-center" src="_images/flow_3.png" />
+<p>Select the <em>Start Rule</em> and on the RHS,  drop in a few Room nodes like this:</p>
+<img alt="_images/flow_7.png" class="align-center" src="_images/flow_7.png" />
+<img alt="_images/flow_4.png" class="align-center" src="_images/flow_4.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Cycles are not supported by the SnapMap builder</p>
 </div>
 <p>Execute the rule and see how the final graph is generated. You do this by clicking the Run icon on the Execution graph panel</p>
-<div class="figure align-center">
-<img alt="_images/flow_07.png" src="_images/flow_07.png" />
-</div>
-<div class="figure align-center">
-<img alt="_images/flow_08.png" src="_images/flow_08.png" />
-</div>
+<img alt="_images/flow_5.png" class="align-center" src="_images/flow_5.png" />
+<img alt="_images/flow_6.png" class="align-center" src="_images/flow_6.png" />
 <p>We’d like to insert Corridors between the rooms.   Create another rule and give it a name (e.g. <em>Insert Corridors</em>)</p>
-<div class="figure align-center">
-<img alt="_images/flow_09.png" src="_images/flow_09.png" />
-</div>
+<img alt="_images/flow_8.png" class="align-center" src="_images/flow_8.png" />
 <p>On the LHS, we want to find a patterns where two rooms are connected to each other like this (Room -&gt; Room) and have it replaced with (Room -&gt; Corridor -&gt; Room)</p>
 <p>The Graph Grammar will find a pattern you specify on the LHS and replace it with the one you specify on the RHS</p>
 <p>The Indices on the nodes (e.g. Room:0, Room:1) are important that helps in correct mapping.   Since we properly specified 0 and 1 indices on the RHS, it knows the direction of the newly created links to the corridor.   This will be covered in detail in the full documentation soon</p>
 <p>You control how your rules are run from the <strong>Execution Graph</strong>.  Drag drop your newly created <strong>Insert Corridor</strong> rule on to the execution graph and connect it after the <em>Start Rule</em>.</p>
-<div class="figure align-center">
-<img alt="_images/flow_10.png" src="_images/flow_10.png" />
-</div>
+<img alt="_images/flow_9.png" class="align-center" src="_images/flow_9.png" />
 <p>Select the newly placed node and from the details panel, change the execution mode to Iterate and set the count to 2 or 3 (This makes the rule run multiple times since the newly replaced Room nodes wont map with the adjacent older Room nodes by design and need to be run again)</p>
-<div class="figure align-center">
-<img alt="_images/flow_11.png" src="_images/flow_11.png" />
-</div>
+<img alt="_images/flow_A.png" class="align-center" src="_images/flow_A.png" />
 <p>Execute the grammar and you’ll now see corridors between your rooms</p>
-<div class="figure align-center">
-<img alt="_images/flow_12.png" src="_images/flow_12.png" />
-</div>
+<img alt="_images/flow_B.png" class="align-center" src="_images/flow_B.png" />
 <p>We will use this Dungeon Flow graph grammar to generate our snap dungeons</p>
 </div>
 <div class="section" id="generating-the-dungeon">
 <h2>Generating the Dungeon<a class="headerlink" href="#generating-the-dungeon" title="Permalink to this headline">¶</a></h2>
-<p>Assign the <strong>Dungeon Flow</strong> assets to the DungeonSnap game object</p>
-<div class="figure align-center">
-<img alt="_images/build_01.png" src="_images/build_01.png" />
+<p>Assign the <strong>Module Database</strong> and <strong>Dungeon Flow Graph</strong> assets to the Dungeon Actor</p>
+<img alt="_images/finalize_1.png" class="align-center" src="_images/finalize_1.png" />
+<p>Hit <strong>Build Dungeon</strong>.  Click Randomize and try other configurations.  Change the Dungeon Flow graph and experiment further</p>
+<img alt="_images/finalize_2.png" class="align-center" src="_images/finalize_2.png" />
+<p>Enable Debug Draw for more visual info</p>
+<img alt="_images/finalize_3.png" class="align-center" src="_images/finalize_3.png" />
+<img alt="_images/finalize_4.png" class="align-center" src="_images/finalize_4.png" />
 </div>
-<p>Hit <strong>Build Dungeon</strong>.  Randomize the seed and get different configurations that satisfy the layout graph you defined in the flow asset.  Change the Dungeon Flow graph and experiment further</p>
-<div class="figure align-center">
-<img alt="_images/build_02.jpg" src="_images/build_02.jpg" />
+<div class="section" id="level-streaming">
+<h2>Level Streaming<a class="headerlink" href="#level-streaming" title="Permalink to this headline">¶</a></h2>
+<p>The snap builder fully supports Level Streaming. It would Stream In and Out module level files depending on the layout graph and customizable visiblity depth</p>
+<p>Select the Dungeon Actor and enable level streaming</p>
+<img alt="_images/finalize_5A.png" class="align-center" src="_images/finalize_5A.png" />
+<p>Build a new Dungeon at runtime on BeginPlay of the Level’s blueprint</p>
+<img alt="_images/finalize_5B.png" class="align-center" src="_images/finalize_5B.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can get the reference to the Dungeon1 node in the above blueprint by first selecting the dungeon in the level editor, then right click on the level blueprint</p>
 </div>
-<p>Explore the Sample for a more complex and complete dungeon map with multi key-lock system, treasure rooms guarded by miniboss, exist guarded by a Boss room which requires a key to unlock</p>
-<p>Location: <em>DungeonArchitect_SamplesDemoBuilder_SnapScenesDemoScene</em></p>
-<div class="figure align-center">
-<img alt="_images/sample_01.jpg" src="_images/sample_01.jpg" />
+<p>Destroy your existing dungeon. Hit play and the nearby modules will be streamed in / out as you move through dungeons.  This helps with maintaining a smooth framerate with fully dynamic lighting</p>
+<img alt="_images/finalize_6.png" class="align-center" src="_images/finalize_6.png" />
 </div>
-<div class="figure align-center">
-<img alt="_images/sample_02.jpg" src="_images/sample_02.jpg" />
-</div>
-<div class="figure align-center">
-<img alt="_images/sample_03.png" src="_images/sample_03.png" />
-</div>
-</div>
+<div class="section" id="sample-game">
+<h2>Sample Game<a class="headerlink" href="#sample-game" title="Permalink to this headline">¶</a></h2>
+<p>Explore the sample game which contains many more advanced features (minimaps, key / lock demo, NPCs, navigation etc)</p>
+<p><a class="reference external" href="https://drive.google.com/file/d/1ogDj-hxcYECm8CxSH_knxoHC4jP-qll6/view?usp=sharing">Download: Game Source</a></p>
+<p><a class="reference external" href="https://drive.google.com/file/d/1r7o1Mz-Wf_0H4mp_Rt8AqxkBG6r29loM/view?usp=sharing">Download: Game Binaries</a></p>
+<p><strong>Sample Game</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/woKkR6P_sHY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p><strong>MiniMap Demo</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R5Lcx9YSYpo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p><strong>Multi-Level Dungeons</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9Crl9tGkHXA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 </div>
 
 
