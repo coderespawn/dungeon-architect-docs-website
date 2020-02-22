@@ -166,21 +166,21 @@
             
   <div class="section" id="grid-builder">
 <h1>Grid Builder<a class="headerlink" href="#grid-builder" title="Permalink to this headline">¶</a></h1>
-<p>The <cite>Grid Builder</cite> generates a dungeon by scattering rooms across the map and connecting them with corridors.  The builder supports height variations (stairs)</p>
+<p>The <cite>Grid Builder</cite> generates a dungeon by scattering rooms across the map and connecting them with corridors.  This builder supports height variations (stairs)</p>
 <div class="figure align-center">
-<img alt="_images/021.jpg" src="_images/021.jpg" />
+<img alt="_images/013.jpg" src="_images/013.jpg" />
 </div>
 <p>We’ve used this dungeon builder in the previous section <a class="reference internal" href="create_first_dungeon.html"><span class="doc">Create your first Dungeon</span></a> and <a class="reference internal" href="design_first_theme.html"><span class="doc">Design your first theme</span></a></p>
 <p>In this section, we’ll explore more on this builder</p>
 <div class="section" id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
-<p>Continuing on the scene created in the section <a class="reference internal" href="design_first_theme.html"><span class="doc">Design your first theme</span></a>, open the scene and select the <code class="docutils literal notranslate"><span class="pre">DungeonGrid</span></code> game object and inspect the properties</p>
+<p>Continuing on the map created in the section <a class="reference internal" href="design_first_theme.html"><span class="doc">Design your first theme</span></a>, open the map and select the <cite>Dungeon</cite> actor and inspect the properties</p>
 <div class="figure align-center">
-<img alt="_images/01.png" src="_images/01.png" />
+<img alt="_images/02.png" src="_images/02.png" />
 </div>
 <ul class="simple">
 <li><p>Change the <code class="docutils literal notranslate"><span class="pre">Seed</span></code> parameter to build a different dungeon layout</p></li>
-<li><p>Set the <code class="docutils literal notranslate"><span class="pre">Grid</span> <span class="pre">Cell</span> <span class="pre">Size</span></code> parameter according to your moduler art asset. If the ground mesh is 4x4 and the stair mesh height is 2, set this to <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">2,</span> <span class="pre">4)</span></code></p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">Grid</span> <span class="pre">Cell</span> <span class="pre">Size</span></code> parameter according to your moduler art asset. If the ground mesh is 400x400 and the stair mesh height is 200, set this to <code class="docutils literal notranslate"><span class="pre">(400,</span> <span class="pre">400,</span> <span class="pre">200)</span></code></p></li>
 <li><p>The dungeon creation method first creates a number of cells (defined by <code class="docutils literal notranslate"><span class="pre">NumCells</span></code>) and spreads them across the scene.</p></li>
 <li><p>The size of these cells is define by the parameters <code class="docutils literal notranslate"><span class="pre">Min</span> <span class="pre">Cell</span> <span class="pre">Size</span></code> and <code class="docutils literal notranslate"><span class="pre">Max</span> <span class="pre">Cell</span> <span class="pre">Size</span></code></p></li>
 <li><p>Some of these cells will be promoted to Rooms and the rest will be promoted to Corridors.  If the cell area is large enough (parameter <code class="docutils literal notranslate"><span class="pre">Room</span> <span class="pre">Area</span> <span class="pre">Threshold</span></code>), that cell is promoted to a <cite>Room</cite>, otherwise a <cite>Corridor</cite></p></li>
@@ -193,18 +193,21 @@
 </div>
 <div class="section" id="platform-volume">
 <h2>Platform Volume<a class="headerlink" href="#platform-volume" title="Permalink to this headline">¶</a></h2>
-<p>Platform Volumes let you control the placement of the rooms or corridors.   You do this dropping in a platform volume on to the scene and resizing  / positioning it on the scene and you room will be built around it.</p>
-<p>Navigate to <code class="docutils literal notranslate"><span class="pre">Asset/DungeonArchitect/Prefabs</span></code> and drag drop the <code class="docutils literal notranslate"><span class="pre">PlatformVolume</span></code> prefab on to the scene</p>
+<p>Platform Volumes let you control the placement of the rooms or corridors.   You do this dropping in a <code class="docutils literal notranslate"><span class="pre">Grid</span> <span class="pre">Dungeon</span> <span class="pre">Platform</span> <span class="pre">Volume</span></code> on to the scene and resizing  / positioning it on the scene and you room will be built around it.</p>
 <div class="figure align-center">
 <img alt="_images/03.png" src="_images/03.png" />
 </div>
-<p>Select the PlatformVolume game object and set the Dungeon reference</p>
 <div class="figure align-center">
-<img alt="_images/04.png" src="_images/04.png" />
+<img alt="_images/042.jpg" src="_images/042.jpg" />
 </div>
-<p>Click the button <code class="docutils literal notranslate"><span class="pre">Rebuild</span> <span class="pre">Dungeon</span></code></p>
+<p>Select the PlatformVolume game object, set the Dungeon reference and enable <code class="docutils literal notranslate"><span class="pre">Realtime</span> <span class="pre">Update</span></code> (or press Rebuild Dungeon)</p>
 <div class="figure align-center">
-<img alt="_images/05.gif" src="_images/05.gif" />
+<img alt="_images/053.png" src="_images/053.png" />
+</div>
+<p>Change the Cell Type from <cite>Corridor</cite> to <cite>Room</cite></p>
+<div class="figure align-center" id="id1">
+<img alt="_images/06.gif" src="_images/06.gif" />
+<p class="caption"><span class="caption-text">Platform Volume to create a Corridor or a Room</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Move the <cite>Platform Volume</cite> and scale it to control the position and size of your room. You can have multiple platform volumes in the scene. Check the samples in the Launch Pad for more examples</p>
 </div>
@@ -213,7 +216,7 @@
 <p>Theme Override Volumes let you apply another theme on certain portions of your dungeons that are covered by this volume.  These are useful for adding variations to your dungeons.</p>
 <p>Navigate to <code class="docutils literal notranslate"><span class="pre">Asset/DungeonArchitect/Prefabs</span></code> and drag drop the <code class="docutils literal notranslate"><span class="pre">ThemeOverrideVolume</span></code> prefab on to the scene</p>
 <div class="figure align-center">
-<img alt="_images/06.png" src="_images/06.png" />
+<img alt="_images/09.png" src="_images/09.png" />
 </div>
 <p>Move and scale it to cover a certain portion of the dungeon</p>
 <div class="figure align-center">
@@ -221,27 +224,27 @@
 </div>
 <p>Select the theme override volume you just dropped and inspect the properties and assign the DungeonGrid reference</p>
 <div class="figure align-center">
-<img alt="_images/08.png" src="_images/08.png" />
+<img alt="_images/103.png" src="_images/103.png" />
 </div>
-<p>Navigate to <code class="docutils literal notranslate"><span class="pre">Assets/DungeonArchitect_Samples/Demo_Theme_SimpleShapes/Themes</span></code> and assign the theme <code class="docutils literal notranslate"><span class="pre">Theme_Basic_White</span></code> to the Theme Override Volume</p>
+<p>Assign a theme you’d like to apply within these bounds.  Then hit <code class="docutils literal notranslate"><span class="pre">Rebuild</span> <span class="pre">Dungeon</span></code> button</p>
 <div class="figure align-center">
-<img alt="_images/09.png" src="_images/09.png" />
+<img alt="_images/084.jpg" src="_images/084.jpg" />
 </div>
-<p>Click <code class="docutils literal notranslate"><span class="pre">Rebuild</span> <span class="pre">Dungeon</span></code></p>
-<div class="figure align-center">
-<img alt="_images/10.jpg" src="_images/10.jpg" />
+<div class="figure align-center" id="id2">
+<img alt="_images/11.gif" src="_images/11.gif" />
+<p class="caption"><span class="caption-text">Before / After theme override</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="paint-mode">
 <h2>Paint Mode<a class="headerlink" href="#paint-mode" title="Permalink to this headline">¶</a></h2>
 <p>You can paint your own dungeon layout on top of the procedural dungeon</p>
-<p>Select the DungeonGrid prefab and expand it.   Select the <code class="docutils literal notranslate"><span class="pre">PaintMode</span></code> game object.  This will activate the <cite>Paint Mode</cite></p>
+<p>Select the Dungeon Edit Mode from the Modes panel.  This will allow you to use the various paint tools to draw over the existing layout</p>
 <div class="figure align-center">
-<img alt="_images/11.png" src="_images/11.png" />
+<img alt="_images/12.png" src="_images/12.png" />
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Left</span> <span class="pre">click</span></code> and drag to draw dungeon cells.   <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Left</span> <span class="pre">click</span></code> to delete cells.   <code class="docutils literal notranslate"><span class="pre">Scroll</span> <span class="pre">wheel</span></code> to move the cursor up/down</p>
 <div class="figure align-center">
-<img alt="_images/12.gif" src="_images/12.gif" />
+<img alt="_images/131.gif" src="_images/131.gif" />
 </div>
 </div>
 </div>
