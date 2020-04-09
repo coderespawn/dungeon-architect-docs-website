@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -217,9 +217,9 @@
 <div class="section" id="setup-dungeon-actor">
 <h3>Setup Dungeon Actor<a class="headerlink" href="#setup-dungeon-actor" title="Permalink to this headline">¶</a></h3>
 <p>Create a new Level and drop in a dungeon actor</p>
-<img alt="_images/023.jpg" class="align-center" src="_images/023.jpg" />
+<img alt="_images/022.jpg" class="align-center" src="_images/022.jpg" />
 <p>Inspect the properties of the dungeon actor you just dropped.   Set the <cite>Builder Class</cite> to <code class="docutils literal notranslate"><span class="pre">GridFlowBuilder</span></code></p>
-<img alt="_images/011.png" class="align-center" src="_images/011.png" />
+<img alt="_images/01.png" class="align-center" src="_images/01.png" />
 </div>
 <div class="section" id="setup-theme">
 <h3>Setup Theme<a class="headerlink" href="#setup-theme" title="Permalink to this headline">¶</a></h3>
@@ -233,7 +233,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The above theme theme file is under <cite>Dungeon Architect Content &gt; Builders &gt; GridFlowContent &gt; Theme</cite> folder</p>
-<img alt="_images/041.png" class="align-center" src="_images/041.png" />
+<img alt="_images/04.png" class="align-center" src="_images/04.png" />
 </div>
 </div>
 <div class="section" id="setup-gridflow-graph">
@@ -241,7 +241,7 @@
 <p>This builder requires another asset called the <cite>Grid Flow Graph</cite>.   This is a graph that helps you  control the flow of your dungeon. In this section, we’ll use an existing graph from the samples folder</p>
 <p>Select the Dungeon actor and in the <cite>Grid Flow</cite> setting assign the following asset <code class="docutils literal notranslate"><span class="pre">DefaultGridFlow</span></code>.  This is in the folder <cite>Dungeon Architect Content &gt; Builders &gt; GridFlowContent &gt; FlowGraph</cite></p>
 <img alt="_images/05.png" class="align-center" src="_images/05.png" />
-<img alt="_images/061.png" class="align-center" src="_images/061.png" />
+<img alt="_images/06.png" class="align-center" src="_images/06.png" />
 <img alt="_images/07.png" class="align-center" src="_images/07.png" />
 </div>
 <div class="section" id="build-dungeon">
@@ -263,14 +263,14 @@
 <p>Navigate to <code class="docutils literal notranslate"><span class="pre">Dungeon</span> <span class="pre">Architect</span> <span class="pre">Content</span> <span class="pre">&gt;</span> <span class="pre">Builders</span> <span class="pre">&gt;</span> <span class="pre">GridFlowContent</span> <span class="pre">&gt;</span> <span class="pre">FlowGraph</span></code> and double click on <code class="docutils literal notranslate"><span class="pre">DefaultGridFlow</span></code></p>
 <p>This will open the <cite>Grid Flow Editor</cite></p>
 <div class="figure align-center" id="id3">
-<img alt="_images/101.jpg" src="_images/101.jpg" />
+<img alt="_images/10.jpg" src="_images/10.jpg" />
 <p class="caption"><span class="caption-text">Grid Flow Editor</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Click the Build button toolbar to build the graph</p>
-<img alt="_images/111.png" class="align-center" src="_images/111.png" />
+<img alt="_images/11.png" class="align-center" src="_images/11.png" />
 <img alt="_images/122.jpg" class="align-center" src="_images/122.jpg" />
 <p>Keep hitting build to get a new dungeon</p>
-<img alt="_images/13.gif" class="align-center" src="_images/13.gif" />
+<img alt="_images/131.gif" class="align-center" src="_images/131.gif" />
 <div class="section" id="explore-grid-flow-graph">
 <h3>Explore Grid Flow Graph<a class="headerlink" href="#explore-grid-flow-graph" title="Permalink to this headline">¶</a></h3>
 <p>After you’ve built a dungeon in the editor (by hitting the <cite>Build</cite> button on the toolbar), you can select each node in the execution graph and see how the dungeon layout was built, as shown in the lower preview panels</p>
@@ -321,7 +321,7 @@
 <img alt="_images/19.png" class="align-center" src="_images/19.png" />
 <p>Connect this node to the <code class="docutils literal notranslate"><span class="pre">Result</span></code> node and click the <code class="docutils literal notranslate"><span class="pre">Build</span></code> button in the toolbar</p>
 <img alt="_images/20.png" class="align-center" src="_images/20.png" />
-<img alt="_images/111.png" class="align-center" src="_images/111.png" />
+<img alt="_images/11.png" class="align-center" src="_images/11.png" />
 <p>This node creates an initial grid to work with</p>
 <img alt="_images/21.png" class="align-center" src="_images/21.png" />
 <p>We’ll be designing our layout in this grid.   This allows us to work on a higher level abstract graph, making it easier to control the flow.   It will then be transferred over to a tilemap</p>
@@ -966,7 +966,7 @@
 <p class="caption"><span class="caption-text">Lock Metadata</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>Notice the Key metadata has a reference to the red locked door’s id</p>
-<img alt="_images/105.jpg" class="align-center" src="_images/105.jpg" />
+<img alt="_images/1051.jpg" class="align-center" src="_images/1051.jpg" />
 <div class="section" id="sample">
 <h3>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h3>
 <p>Try out the Game Sample from the Launch Pad. Navigate to <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Pad</span> <span class="pre">&gt;</span> <span class="pre">Samples</span> <span class="pre">&gt;</span> <span class="pre">Grid</span> <span class="pre">Flow</span> <span class="pre">Builder</span> <span class="pre">&gt;</span> <span class="pre">Grid</span> <span class="pre">Flow</span> <span class="pre">Game</span> <span class="pre">&gt;</span> <span class="pre">Clone</span> <span class="pre">Scene</span></code></p>
@@ -990,7 +990,7 @@
 <img alt="_images/110.png" class="align-center" src="_images/110.png" />
 <p>Check the player controller on how to initialize the minimap and show it on the screen <code class="docutils literal notranslate"><span class="pre">DungeonArchitect</span> <span class="pre">Content</span> <span class="pre">&gt;</span> <span class="pre">Samples</span> <span class="pre">&gt;</span> <span class="pre">DA_GridFlow_Game</span> <span class="pre">&gt;</span> <span class="pre">Blueprints</span> <span class="pre">&gt;</span> <span class="pre">BP_GridFlowDemo_PlayerController</span></code></p>
 <div class="figure align-center" id="id24">
-<img alt="_images/1111.png" src="_images/1111.png" />
+<img alt="_images/111.png" src="_images/111.png" />
 <p class="caption"><span class="caption-text"><cite>Right Click &gt; Open Image In New Tab</cite> for a clearer image</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <img alt="_images/112.png" class="align-center" src="_images/112.png" />
