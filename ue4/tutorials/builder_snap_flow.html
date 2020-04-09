@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#dungeon-flow">Dungeon Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#generating-the-dungeon">Generating the Dungeon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#level-streaming">Level Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#negation-volumes">Negation Volumes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sample-game">Sample Game</a></li>
 </ul>
 </li>
@@ -319,6 +320,19 @@
 </div>
 <p>Destroy your existing dungeon. Hit play and the nearby modules will be streamed in / out as you move through dungeons.  This helps with maintaining a smooth framerate with fully dynamic lighting</p>
 <img alt="_images/finalize_6.png" class="align-center" src="_images/finalize_6.png" />
+</div>
+<div class="section" id="negation-volumes">
+<h2>Negation Volumes<a class="headerlink" href="#negation-volumes" title="Permalink to this headline">¶</a></h2>
+<p>You can control where you dungeon grows by using Negation Volumes.  This allow (or disallow) the grow of a dungeon at certain places.  Use this to make sure your dungeon fits in a certain play area, or make sure it is not built in certain areas</p>
+<p>Drop in a Dungeon Negation Volume actor on to the scene and scale it to the desired size</p>
+<img alt="_images/create_volume_negation.png" class="align-center" src="_images/create_volume_negation.png" />
+<p>Select the Negation Volume and inspect the properties.   Assign the dungeon actor so this volume can work on that Dungeon</p>
+<p>Hit build and the dungeon won’t build in that location</p>
+<img alt="_images/snap_negation.gif" class="align-center" src="_images/snap_negation.gif" />
+<p>If the flag <code class="docutils literal notranslate"><span class="pre">Reversed</span></code> is checked in the properties, then the dungeon will be constrained within the volume bounds</p>
+<img alt="_images/snap_negation2.gif" class="align-center" src="_images/snap_negation2.gif" />
+<p>Check the samples in the Launch Pad window</p>
+<img alt="_images/new_samples_snap.jpg" class="align-center" src="_images/new_samples_snap.jpg" />
 </div>
 <div class="section" id="sample-game">
 <h2>Sample Game<a class="headerlink" href="#sample-game" title="Permalink to this headline">¶</a></h2>
