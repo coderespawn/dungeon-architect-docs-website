@@ -148,6 +148,10 @@
 <li class="toctree-l1"><a class="reference internal" href="builder_floor_plan.html">Floor Plan Builder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="builder_isaac.html">Isaac Builder</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Misc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="manual_installation.html">Manual Installation</a></li>
+</ul>
 
             
           
@@ -217,7 +221,7 @@
 <div class="section" id="setup-dungeon-actor">
 <h3>Setup Dungeon Actor<a class="headerlink" href="#setup-dungeon-actor" title="Permalink to this headline">¶</a></h3>
 <p>Create a new Level and drop in a dungeon actor</p>
-<img alt="_images/022.jpg" class="align-center" src="_images/022.jpg" />
+<img alt="_images/02.jpg" class="align-center" src="_images/02.jpg" />
 <p>Inspect the properties of the dungeon actor you just dropped.   Set the <cite>Builder Class</cite> to <code class="docutils literal notranslate"><span class="pre">GridFlowBuilder</span></code></p>
 <img alt="_images/01.png" class="align-center" src="_images/01.png" />
 </div>
@@ -240,7 +244,7 @@
 <h3>Setup GridFlow Graph<a class="headerlink" href="#setup-gridflow-graph" title="Permalink to this headline">¶</a></h3>
 <p>This builder requires another asset called the <cite>Grid Flow Graph</cite>.   This is a graph that helps you  control the flow of your dungeon. In this section, we’ll use an existing graph from the samples folder</p>
 <p>Select the Dungeon actor and in the <cite>Grid Flow</cite> setting assign the following asset <code class="docutils literal notranslate"><span class="pre">DefaultGridFlow</span></code>.  This is in the folder <cite>Dungeon Architect Content &gt; Builders &gt; GridFlowContent &gt; FlowGraph</cite></p>
-<img alt="_images/05.png" class="align-center" src="_images/05.png" />
+<img alt="_images/051.png" class="align-center" src="_images/051.png" />
 <img alt="_images/06.png" class="align-center" src="_images/06.png" />
 <img alt="_images/07.png" class="align-center" src="_images/07.png" />
 </div>
@@ -252,7 +256,7 @@
 <p class="caption"><span class="caption-text">GridFlow dungeon built using the sample theme</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id2">
-<img alt="_images/08.jpg" src="_images/08.jpg" />
+<img alt="_images/081.jpg" src="_images/081.jpg" />
 <p class="caption"><span class="caption-text">GridFlow dungeons support key-locks</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -268,7 +272,7 @@
 </div>
 <p>Click the Build button toolbar to build the graph</p>
 <img alt="_images/11.png" class="align-center" src="_images/11.png" />
-<img alt="_images/122.jpg" class="align-center" src="_images/122.jpg" />
+<img alt="_images/12.jpg" class="align-center" src="_images/12.jpg" />
 <p>Keep hitting build to get a new dungeon</p>
 <img alt="_images/131.gif" class="align-center" src="_images/131.gif" />
 <div class="section" id="explore-grid-flow-graph">
@@ -312,7 +316,7 @@
 <p>Close the Grid Flow Editor, if open</p>
 <p>Right click on the <cite>Content Browser</cite> and choose Dungeon Architect &gt; Grid Flow.  This will create a new Grid Flow asset. Rename it to something appropriate and double click to open it in the <cite>Grid Flow Editor</cite></p>
 <img alt="_images/18.png" class="align-center" src="_images/18.png" />
-<img alt="_images/171.jpg" class="align-center" src="_images/171.jpg" />
+<img alt="_images/17.jpg" class="align-center" src="_images/17.jpg" />
 <p>Notice that there is only one node in the Execution graph, the <code class="docutils literal notranslate"><span class="pre">Result</span></code> node.   Our final output should be connected to this node</p>
 </div>
 <div class="section" id="create-grid">
@@ -946,14 +950,14 @@
 </div>
 <div class="section" id="key-lock-system">
 <h2>Key Lock System<a class="headerlink" href="#key-lock-system" title="Permalink to this headline">¶</a></h2>
-<p>The  Key and Lock actors that were spawned by the theme engine would have the <cite>Item Metadata</cite> filled up by Dungeon Architect, provided the actor has the <code class="docutils literal notranslate"><span class="pre">Dungeon</span> <span class="pre">Grid</span> <span class="pre">Flow</span> <span class="pre">Item</span> <span class="pre">Metadata</span></code> component attached to it</p>
+<p>The  Key and Lock actors that were spawned by the theme engine would have the <cite>Item Metadata</cite> filled up by Dungeon Architect, provided the actor has the <code class="docutils literal notranslate"><span class="pre">Dungeon</span> <span class="pre">Flow</span> <span class="pre">Item</span> <span class="pre">Metadata</span></code> component attached to it</p>
 <p>In the sample, the Key and Lock blueprints has the above component added to it</p>
 <div class="figure align-center" id="id20">
 <img alt="_images/101.png" src="_images/101.png" />
 <p class="caption"><span class="caption-text">Key blueprint</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id21">
-<img alt="_images/1021.png" src="_images/1021.png" />
+<img alt="_images/102.png" src="_images/102.png" />
 <p class="caption"><span class="caption-text">Lock blueprint</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <p>When these actors are spawned in the scene, the item information will be filled in.   This includes the <cite>Item Id</cite>, list of references to other items (like keys referencing all the other lock ids it can open)</p>
@@ -962,11 +966,11 @@
 <p class="caption"><span class="caption-text">Key Metadata</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id23">
-<img alt="_images/1041.jpg" src="_images/1041.jpg" />
+<img alt="_images/104.jpg" src="_images/104.jpg" />
 <p class="caption"><span class="caption-text">Lock Metadata</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <p>Notice the Key metadata has a reference to the red locked door’s id</p>
-<img alt="_images/1051.jpg" class="align-center" src="_images/1051.jpg" />
+<img alt="_images/105.jpg" class="align-center" src="_images/105.jpg" />
 <div class="section" id="sample">
 <h3>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h3>
 <p>Try out the Game Sample from the Launch Pad. Navigate to <code class="docutils literal notranslate"><span class="pre">Launch</span> <span class="pre">Pad</span> <span class="pre">&gt;</span> <span class="pre">Samples</span> <span class="pre">&gt;</span> <span class="pre">Grid</span> <span class="pre">Flow</span> <span class="pre">Builder</span> <span class="pre">&gt;</span> <span class="pre">Grid</span> <span class="pre">Flow</span> <span class="pre">Game</span> <span class="pre">&gt;</span> <span class="pre">Clone</span> <span class="pre">Scene</span></code></p>

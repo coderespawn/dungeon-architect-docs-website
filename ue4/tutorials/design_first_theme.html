@@ -109,6 +109,10 @@
 <li class="toctree-l1"><a class="reference internal" href="builder_floor_plan.html">Floor Plan Builder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="builder_isaac.html">Isaac Builder</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Misc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="manual_installation.html">Manual Installation</a></li>
+</ul>
 
             
           
@@ -174,7 +178,7 @@
 <h1>Design your first theme<a class="headerlink" href="#design-your-first-theme" title="Permalink to this headline">¶</a></h1>
 <p>A theme file is a mapping between <strong>marker</strong> names (like Walls, Ground, Door etc) and the meshes that you provide.    The assets you map here will be used to build your dungeon</p>
 <img alt="_images/012.jpg" class="align-center" src="_images/012.jpg" />
-<img alt="_images/023.jpg" class="align-center" src="_images/023.jpg" />
+<img alt="_images/021.jpg" class="align-center" src="_images/021.jpg" />
 <p>In the previous section, we created a dungeon with an existing theme file.  In this section, we’ll create one ourselves</p>
 <div class="section" id="create-a-theme-file">
 <h2>Create a Theme File<a class="headerlink" href="#create-a-theme-file" title="Permalink to this headline">¶</a></h2>
@@ -182,7 +186,7 @@
 <img alt="_images/033.png" class="align-center" src="_images/033.png" />
 <p>This will create the Dungeon Theme asset.  Double click it to open the Theme Editor</p>
 <img alt="_images/03A.png" class="align-center" src="_images/03A.png" />
-<img alt="_images/04.jpg" class="align-center" src="_images/04.jpg" />
+<img alt="_images/041.jpg" class="align-center" src="_images/041.jpg" />
 </div>
 <div class="section" id="use-sample-assets">
 <h2>Use Sample Assets<a class="headerlink" href="#use-sample-assets" title="Permalink to this headline">¶</a></h2>
@@ -192,39 +196,39 @@
 <p>You can use any asset you like, but for this tutorial, lets stick with the sample assets</p>
 </div>
 <p>Click <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Options</span></code> button and make sure <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Plugin</span> <span class="pre">Content</span></code> is selected</p>
-<img alt="_images/052.png" class="align-center" src="_images/052.png" />
-<img alt="_images/062.png" class="align-center" src="_images/062.png" />
+<img alt="_images/053.png" class="align-center" src="_images/053.png" />
+<img alt="_images/061.png" class="align-center" src="_images/061.png" />
 <p>Navigate to <code class="docutils literal notranslate"><span class="pre">Dungeon</span> <span class="pre">Architect</span> <span class="pre">Content</span> <span class="pre">&gt;</span> <span class="pre">Samples</span> <span class="pre">&gt;</span> <span class="pre">DA_Candy</span> <span class="pre">&gt;</span> <span class="pre">Meshes</span></code>.  This folder contains a set of meshes we can use for our dungeon</p>
 <img alt="_images/071.jpg" class="align-center" src="_images/071.jpg" />
 </div>
 <div class="section" id="add-ground-mesh">
 <h2>Add Ground Mesh<a class="headerlink" href="#add-ground-mesh" title="Permalink to this headline">¶</a></h2>
 <p>Drag-drop the ground mesh on to the Theme Editor</p>
-<img alt="_images/082.jpg" class="align-center" src="_images/082.jpg" />
+<img alt="_images/083.jpg" class="align-center" src="_images/083.jpg" />
 <p>Link up the mesh node with the <code class="docutils literal notranslate"><span class="pre">Ground</span></code> marker node.  When you do, you should see a live preview on theme editor’s Preview Viewport window</p>
 <img alt="_images/091.jpg" class="align-center" src="_images/091.jpg" />
-<img alt="_images/104.jpg" class="align-center" src="_images/104.jpg" />
+<img alt="_images/101.jpg" class="align-center" src="_images/101.jpg" />
 </div>
 <div class="section" id="add-more-meshes">
 <h2>Add More Meshes<a class="headerlink" href="#add-more-meshes" title="Permalink to this headline">¶</a></h2>
 <p>Go ahead and add more meshes under the following markers: <strong>Wall</strong>, <strong>Fence</strong> and <strong>Door</strong></p>
 <img alt="_images/11.jpg" class="align-center" src="_images/11.jpg" />
-<img alt="_images/12.jpg" class="align-center" src="_images/12.jpg" />
+<img alt="_images/121.jpg" class="align-center" src="_images/121.jpg" />
 </div>
 <div class="section" id="add-wall-pillars">
 <h2>Add Wall Pillars<a class="headerlink" href="#add-wall-pillars" title="Permalink to this headline">¶</a></h2>
 <p>Drag drop the <code class="docutils literal notranslate"><span class="pre">Pillar2</span></code> mesh to the theme editor and link it to the <code class="docutils literal notranslate"><span class="pre">WallSeparator</span></code> marker node</p>
 <img alt="_images/13.jpg" class="align-center" src="_images/13.jpg" />
-<img alt="_images/141.jpg" class="align-center" src="_images/141.jpg" />
+<img alt="_images/14.jpg" class="align-center" src="_images/14.jpg" />
 <p>We’ll need to make this pillar a bit bigger. Select the node you just dropped and modify the Scale parameter under Offset category</p>
 <img alt="_images/15.jpg" class="align-center" src="_images/15.jpg" />
 <p>The live preview should update automatically to show the new scaled pillars</p>
-<img alt="_images/161.jpg" class="align-center" src="_images/161.jpg" />
+<img alt="_images/16.jpg" class="align-center" src="_images/16.jpg" />
 </div>
 <div class="section" id="add-windows">
 <h2>Add Windows<a class="headerlink" href="#add-windows" title="Permalink to this headline">¶</a></h2>
 <p>We have two wall meshes in the samples folder</p>
-<img alt="_images/17.jpg" class="align-center" src="_images/17.jpg" />
+<img alt="_images/171.jpg" class="align-center" src="_images/171.jpg" />
 <p>The other one (<code class="docutils literal notranslate"><span class="pre">Wall2</span></code>) has a window. Lets configure the theme to sometimes use this second mesh, so we can have some windows</p>
 <p>Drag drop <code class="docutils literal notranslate"><span class="pre">Wall2</span></code> mesh on to the theme editor and place it <strong>before</strong> (left of) the existing wall mesh node</p>
 <img alt="_images/18A.jpg" class="align-center" src="_images/18A.jpg" />
@@ -255,7 +259,7 @@
 <p>Select the photo frame node and change the Offset’s <strong>Position</strong> to <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">-22,</span> <span class="pre">200)</span></code> and <strong>Rotation</strong> to <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">180)</span></code></p>
 <img alt="_images/271.png" class="align-center" src="_images/271.png" />
 <p>The photo frame is aligned now with the walls correctly</p>
-<img alt="_images/281.jpg" class="align-center" src="_images/281.jpg" />
+<img alt="_images/28.jpg" class="align-center" src="_images/28.jpg" />
 </div>
 <div class="section" id="marker-emitters">
 <h2>Marker Emitters<a class="headerlink" href="#marker-emitters" title="Permalink to this headline">¶</a></h2>
